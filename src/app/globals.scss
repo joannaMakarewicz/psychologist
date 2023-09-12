@@ -1,0 +1,25 @@
+@import "../helpers/_variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  color:$fontColor;
+  font-family: 'Poppins', sans-serif;
+  margin:0;
+  padding: 0;
+}
+
+a {
+  color:$fontColor;
+}
+
