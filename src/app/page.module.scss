@@ -3,30 +3,50 @@
 .about {
   background-color: $white;
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-columns: 1fr;
   position: relative;
+  @media screen and (min-width:768px) {
+    grid-template-columns: 1fr 2fr;
+  }
+  @media screen and (min-width:1024px) {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
   &__content {
     line-height: 1.7rem;
   }
   &__image {
     background-image: url("../assets/hand.jpg");
     background-size: cover;
+    display: none;
     height: 100%;
     opacity: 0.5;
     width: 100%;
     z-index: 1;
+    @media screen and (min-width:1024px) {
+      display: block;
+    }
   }
   &__image2 {
     background-image: url("../assets/klaudia2.JPG");
     background-size: cover;
-    background-position: center;
-    left: 15%;
-    position: absolute;
-    width: 35%;
-    height: 80%;
-    top: 10%;
-    z-index: 2;
-    overflow: hidden;
+    background-position: 10% 30%;
+    height: 40vh;
+    @media screen and (min-width:768px) {
+      background-position: center;
+      left: 0;
+      position: absolute;
+      width: 35%;
+      height: 100%;
+      top: 0;
+      z-index: 2;
+      overflow: hidden;
+    }
+    @media screen and (min-width:1024px) {
+      height: 80%;
+      left: 15%;
+      top: 10%;
+      width: 35%;
+    }
   }
   &__text {
     align-items: flex-start;
@@ -46,16 +66,27 @@
 .main {
   background-color: $white;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   height: 100%;
+  @media screen and (min-width:1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
   &__content {
     line-height: 1.7rem;
+    padding-bottom: 0.83em;
   }
   &__image {
     background-image: url("../assets/klaudia1.jpg");
     background-size: cover;
     padding: 6px;
+    height: 50vh;
     width: 100%;
+          @media screen and (min-width:768px) {
+   height: 70vh
+  }
+      @media screen and (min-width:1024px) {
+   height: 100%;
+  }
   }
   &__text {
     background-color: $green;
@@ -112,7 +143,7 @@
 }
 
 .footer {
-  background-color: $beige;
+  background-color: $darkGreen;
   color: #fff;
   padding: 30px 0 1px;
   text-align: left;
@@ -251,7 +282,8 @@
   overflow: hidden;
 }
 .formArea {
-  background-color: $green;
+  background-color: $beige;
+  color:$fontColor;
   display: grid;
   @media screen and (min-width: 1024px) {
     grid-template-columns: 1fr 1fr;
@@ -274,3 +306,44 @@
     width: 100%;
   }
 }
+
+.offer {
+  background-color: $green;
+  color: $white;
+  padding: 16px 10%;
+  &__heading {
+    margin: 0;
+  }
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  &__imgContainer {
+    height: 150px;
+    overflow: hidden;
+    object-fit: cover;
+    width: 150px;
+  }
+  &__item {
+    width: 100%;
+    margin: 0 auto;
+  }
+  &__list {
+    column-gap: 16px;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media screen and (min-width: 1024px) {
+ grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+}
+
+

@@ -6,6 +6,10 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdAlternateEmail } from "react-icons/md";
 import baby from "../assets/baby.jpg";
+import offer1 from "../assets/offer1.jpg";
+import offer2 from "../assets/offer2.jpg";
+import offer3 from "../assets/offer3.jpg";
+import offer4 from "../assets/offer4.jpg";
 import styles from "./page.module.scss";
 
 export default function Home() {
@@ -50,7 +54,7 @@ export default function Home() {
       </nav>
       <section className={styles.main}>
         <div className={styles.main__image} />
-        
+
         <article className={styles.main__text}>
           <h2 className={styles.main__heading}>
             INDYWIDUALNE PODEJŚCIE DO POTRZEB KAŻDEGO DZIECKA
@@ -66,7 +70,9 @@ export default function Home() {
             metodą mojej pracy jest terapia behawioralna w oparciu o Stosowaną
             Analizę Zachowania.
           </p>
+          <button className={styles.main__button}>Umów się</button>
         </article>
+        
       </section>
       <section className={styles.quot}>
         <h3>
@@ -100,9 +106,170 @@ export default function Home() {
           <button>Umów się</button>
         </article>
       </section>
+      <section className={styles.offer}>
+        <article className={styles.offer__container}>
+          <h4 className={styles.offer__heading}>OFEROWANE USŁUGI</h4>
+          <p className={styles.offer__content}>
+            Wsparcie na każdym kroku drogi rozwoju
+          </p>
+          <ul className={styles.offer__list}>
+            {/* <li className={styles.offer__item}>
+              <div className="card">
+                <div className={styles.offer__imgContainer}>
+                  <Image
+                    className={styles.offer__img}
+                    src={offer1}
+                    alt="Card image cap"
+                    width={300}
+                    height={300}
+                    priority
+                  />
+                </div>
+
+                <div className="card-body">
+                  <h5 className="card-title">Konsultacje psychologiczne</h5>
+                  <p className="card-text">
+                    Jednorazowe spotkanie z rodzicami/opiekunami dziecka
+                    pozwalające na określenie trudności z jaką się mierzą.
+                    Wsparcie oraz wyznaczenie odpowiednich kroków działania.
+                    Konsultacje z nastolatkami potrzebującymi wsparcia w
+                    codziennym mierzeniu się z trudnościami okresu dojrzewania.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li className={styles.offer__item}>
+              <div className="card">
+                <div className={styles.offer__imgContainer}>
+                  <Image
+                    className={styles.offer__img}
+                    src={offer2}
+                    alt="Card image cap"
+                    width={300}
+                    height={300}
+                    priority
+                  />
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title">TERAPIA INDYWIDUALNA</h5>
+                  <p className="card-text">
+                    Terapia indywidualna zgodna z wcześniej opracowanym
+                    programem terapeutycznym. Stworzonym zgodnie z potrzebami
+                    oraz możliwościami dziecka. Terapia skierowana jest do
+                    dzieci i młodzieży potrzebujących wsparcia w sferze
+                    poznawczej, emocjonalnej czy społecznej. Zajęcia dedykowane
+                    są również dzieciom z autyzmem, zespołem Aspergera czy
+                    niepełnosprawnością intelektualną.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li className={styles.offer__item}>
+              <div className="card">
+                <div className={styles.offer__imgContainer}>
+                  <Image
+                    className={styles.offer__img}
+                    src={offer3}
+                    alt="Card image cap"
+                    width={300}
+                    height={300}
+                    priority
+                  />
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title">
+                    TRENING UMIEJĘTNOŚCI SPOŁECZNYCH
+                  </h5>
+                  <p className="card-text">
+                    Trening TUS to zajęcia uspołeczniające dla dzieci i
+                    młodzieży. Są to spotkania w niewielkich 5-6 osobowych
+                    grupach. Podczas zajęć omawiamy i ćwiczymy umiejętności
+                    społeczne, które są potrzebne w codziennym funkcjonowaniu.
+                  </p>
+                </div>
+              </div>
+            </li> */}
+                        <li className={styles.offer__item}>
+              <div className={styles.offer__card}>
+                <Image
+                  className={styles.offer__img}
+                  src={offer4}
+                  alt="Card image cap"
+                  priority
+                />
+                <div className="card-body">
+                  <h5 className="card-title">DIAGNOZA PSYCHOLOGICZNA</h5>
+                  <p className="card-text">
+                    Trzyetapowa diagnoza psychologiczna składająca się z wywiadu
+                    z rodzicami, badaniem intelektu dziecka oraz obserwacją
+                    funkcjonowania dziecka w placówce przeprowadzona przez
+                    doświadczony zespół psychologów.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li className={styles.offer__item}>
+              <div className={styles.offer__card}>
+                <Image
+                  className={styles.offer__img}
+                  src={offer4}
+                  alt="Card image cap"
+                  priority
+                />
+                <div className="card-body">
+                  <h5 className="card-title">DIAGNOZA PSYCHOLOGICZNA</h5>
+                  <p className="card-text">
+                    Trzyetapowa diagnoza psychologiczna składająca się z wywiadu
+                    z rodzicami, badaniem intelektu dziecka oraz obserwacją
+                    funkcjonowania dziecka w placówce przeprowadzona przez
+                    doświadczony zespół psychologów.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li className={styles.offer__item}>
+              <div className={styles.offer__card}>
+                <Image
+                  className={styles.offer__img}
+                  src={offer4}
+                  alt="Card image cap"
+                  priority
+                />
+                <div className="card-body">
+                  <h5 className="card-title">DIAGNOZA PSYCHOLOGICZNA</h5>
+                  <p className="card-text">
+                    Trzyetapowa diagnoza psychologiczna składająca się z wywiadu
+                    z rodzicami, badaniem intelektu dziecka oraz obserwacją
+                    funkcjonowania dziecka w placówce przeprowadzona przez
+                    doświadczony zespół psychologów.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li className={styles.offer__item}>
+              <div className={styles.offer__card}>
+                <Image
+                  className={styles.offer__img}
+                  src={offer4}
+                  alt="Card image cap"
+                  priority
+                />
+                <div className="card-body">
+                  <h5 className="card-title">DIAGNOZA PSYCHOLOGICZNA</h5>
+                  <p className="card-text">
+                    Trzyetapowa diagnoza psychologiczna składająca się z wywiadu
+                    z rodzicami, badaniem intelektu dziecka oraz obserwacją
+                    funkcjonowania dziecka w placówce przeprowadzona przez
+                    doświadczony zespół psychologów.
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </article>
+      </section>
       <section className={styles.contactForm}>
         <div className={styles.formArea}>
-
           <form className={styles.form}>
             <h5 className={styles.contactForm__heading}>Napisz do mnie</h5>
             <p className={styles.contactForm__content}>Zapraszam do kontaktu</p>
@@ -154,35 +321,24 @@ export default function Home() {
             <button>Wyślij</button>
           </form>
           {/* <div className={styles.formArea__frame}> */}
-            <Image
-              className={styles.formArea__img}
-              src={baby}
-              alt="przykład ciast"
-            />
-          </div>
+          <Image
+            className={styles.formArea__img}
+            src={baby}
+            alt="przykład ciast"
+          />
+        </div>
         {/* </div> */}
       </section>
-      <section>
-        <article>
-          <h4>OFEROWANE USŁUGI</h4>
-          <p>Wsparcie na każdym kroku drogi rozwoju</p>
-          <ul>
-            <li>Konsultacje psychologiczne</li>
-            <li>TERAPIA INDYWIDUALNA</li>
-            <li>TRENING UMIEJĘTNOŚCI SPOŁECZNYCH</li>
-            <li>DIAGNOZA PSYCHOLOGICZNA</li>
-          </ul>
-        </article>
-      </section>
-      <footer className="footer">
-        <section className="footer__article">
-          <div className="footer__container col-md-3 col-sm-6 w-100">
+
+      <footer className={styles.footer}>
+        <section className={styles.footer__article}>
+          <div className={styles.footer__container}>
             <img className="footer__logo" src="/" alt="chodź na ciacho" />
           </div>
-          <div className="col-md-3 col-sm-6 w-100">
-            <h5 className=" footer__heading">Klaudia Jakaś</h5>
-            <p className="footer__owner">Klaudia</p>
-            <ul className="footer__list">
+          <div>
+            <h5 className={styles.footer__heading}>Klaudia Jakaś</h5>
+            <p className={styles.footer__owner}>Klaudia</p>
+            <ul className={styles.footer__list}>
               <li>
                 <a href="/" target="_blank" rel="noreferrer">
                   <FaLocationDot className="me-1" />
