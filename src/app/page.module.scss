@@ -1,35 +1,86 @@
 @import "../helpers/_variables.scss";
 
+.about {
+  background-color: $white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  position: relative;
+  &__content {
+    line-height: 1.7rem;
+  }
+  &__image {
+    background-image: url("../assets/hand.jpg");
+    background-size: cover;
+    height: 100%;
+    opacity: 0.5;
+    width: 100%;
+    z-index: 1;
+  }
+  &__image2 {
+    background-image: url("../assets/klaudia2.JPG");
+    background-size: cover;
+    background-position: center;
+    left: 15%;
+    position: absolute;
+    width: 35%;
+    height: 80%;
+    top: 10%;
+    z-index: 2;
+    overflow: hidden;
+  }
+  &__text {
+    align-items: flex-start;
+    background-color: &white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15%;
+  }
+}
 
+.contactForm {
+  background-color: $green;
+  color: $white;
+  padding: 0;
+}
 .main {
   background-color: $white;
-  column-gap: 16px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 60vh;
-  overflow: hidden;
-  padding: 16px;
+  height: 100%;
+  &__content {
+    line-height: 1.7rem;
+  }
   &__image {
+    background-image: url("../assets/klaudia1.jpg");
+    background-size: cover;
+    padding: 6px;
     width: 100%;
   }
   &__text {
-    background-color: $beige;
+    background-color: $green;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 15%;
   }
-  }
+}
 
 .nav {
   background-color: $beige;
   box-shadow: 0 4px 8px 0 $white;
-  display:flex;
-  justify-content:space-around;
+  display: flex;
+  justify-content: space-around;
   &__item {
-    margin-left:16px;
+    margin-left: 16px;
   }
   &__list {
     display: flex;
     justify-content: space-around;
     list-style: none;
-    margin:0 15%;
+    margin: 0 15%;
     padding: 6px 0;
     width: 100%;
   }
@@ -45,16 +96,181 @@
   &__heading {
     font-size: 1.5rem;
     font-weight: 400;
-    margin:0;
+    margin: 0;
   }
 }
 
 .contact__icon {
-margin-right: 16px;
-text-decoration: none;
+  margin-right: 16px;
+  text-decoration: none;
 }
 
+.quot {
+  background-color: $beige;
+  padding: 16px;
+  text-align: center;
+}
 
+.footer {
+  background-color: $beige;
+  color: #fff;
+  padding: 30px 0 1px;
+  text-align: left;
+  &__article {
+    display: flex;
+    flex-direction: column;
+    margin: 0 26px;
+    padding: 16px 0;
+    @media screen and (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 0;
+      width: 80vw;
+      margin: 0 auto;
+    }
+    @media screen and (min-width: 1023px) {
+      grid-template-columns: 1fr 2fr 2fr 1fr;
+    }
+  }
+  &__author {
+    border-top: 1px solid $beige;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  &__contact {
+    margin-bottom: 1.5rem;
+  }
+  &__container {
+    text-align: center;
+    @media screen and (min-width: 768px) {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    @media screen and (min-width: 1024px) {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  &__list {
+    font-size: 0.9rem;
+    list-style: none;
+    margin-bottom: 1.5rem;
+    padding: 0;
+    &--special {
+      display: block;
+    }
+  }
+  &__logo {
+    border-radius: 50%;
+    margin: 0 0 32px;
+    width: 30%;
+    @media screen and (min-width: 1024px) {
+      width: 50%;
+      margin-bottom: 0;
+    }
+  }
+  &__owner {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  &__special {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0px;
+    &--margin {
+      margin-top: 1.5rem;
+      @media screen and (min-width: 768px) {
+        margin-top: 2.5rem;
+      }
+    }
+  }
+}
 
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
 
+.footer h5 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $beige;
+  text-transform: uppercase;
+  margin: 0;
+}
 
+.alert {
+  background-color: transparent;
+  border: 1px solid $beige;
+  color: $beige;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+  width: 100%;
+}
+.form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 16px;
+  width: 80%;
+  margin: 0 auto;
+  &__control {
+    border: 0;
+    border-radius: 0;
+    color: $fontColor;
+    font-size: 1rem;
+    outline-color: transparent;
+    margin: 6px;
+    padding: 6px;
+    width: 100%;
+    &--message {
+      height: 8rem;
+    }
+    &--file {
+      font-size: 0.9rem;
+    }
+  }
+  &__heading {
+    margin: 2rem 0;
+  }
+  &__info {
+    font-size: 0.8rem;
+    text-align: left;
+    width: 100%;
+  }
+}
+.contactForm {
+  height: 500px;
+  text-align: center;
+  overflow: hidden;
+}
+.formArea {
+  background-color: $green;
+  display: grid;
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  &__frame {
+    box-shadow: 0 0 10px 0 rgba(41, 51, 65, 0.15);
+    height: 20rem;
+    @media screen and (min-width: 1024px) {
+      border: 1px solid $gold;
+      height: 80%;
+      margin: auto;
+      padding: 0.5rem;
+      width: 25vw;
+    }
+  }
+  &__img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+  }
+}
