@@ -12,6 +12,29 @@ import offer3 from "../assets/offer3.jpg";
 import offer4 from "../assets/offer4.jpg";
 import styles from "./page.module.scss";
 
+const data = [
+  {
+    heading: "Konsultacje psychologiczne",
+    content:
+      "Jednorazowe spotkanie z rodzicami/opiekunami dziecka pozwalające na określenie trudności z jaką się mierzą. Wsparcie oraz wyznaczenie odpowiednich kroków działania. Konsultacje z nastolatkami potrzebującymi wsparcia w codziennym mierzeniu się z trudnościami okresu dojrzewania.",
+  },
+  {
+    heading: "Terapia indywidualna",
+    content:
+      "Terapia indywidualna zgodna z wcześniej opracowanym programem terapeutycznym. Stworzonym zgodnie z potrzebami oraz możliwościami dziecka. Terapia skierowana jest do dzieci i młodzieży potrzebujących wsparcia w sferze poznawczej, emocjonalnej czy społecznej. Zajęcia dedykowane są również dzieciom z autyzmem, zespołem Aspergera czy niepełnosprawnością intelektualną.",
+  },
+  {
+    heading: "Trening umiejętności społecznych",
+    content:
+      "Trening TUS to zajęcia uspołeczniające dla dzieci i młodzieży. Są to spotkania w niewielkich 5-6 osobowych grupach. Podczas zajęć omawiamy i ćwiczymy umiejętności społeczne, które są potrzebne w codziennym funkcjonowaniu.",
+  },
+  {
+    heading: "Diagnoza psychologiczna",
+    content:
+      "Trzyetapowa diagnoza psychologiczna składająca się z wywiadu z rodzicami, badaniem intelektu dziecka oraz obserwacją funkcjonowania dziecka w placówce przeprowadzona przez doświadczony zespół psychologów.",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -72,7 +95,6 @@ export default function Home() {
           </p>
           <button className={styles.main__button}>Umów się</button>
         </article>
-        
       </section>
       <section className={styles.quot}>
         <h3>
@@ -113,158 +135,25 @@ export default function Home() {
             Wsparcie na każdym kroku drogi rozwoju
           </p>
           <ul className={styles.offer__list}>
-            {/* <li className={styles.offer__item}>
-              <div className="card">
-                <div className={styles.offer__imgContainer}>
-                  <Image
-                    className={styles.offer__img}
-                    src={offer1}
-                    alt="Card image cap"
-                    width={300}
-                    height={300}
-                    priority
-                  />
-                </div>
+            {data.map((el) => {
+              return (
+                <li className={styles.offer__item} key={Math.random()}>
+                  <div className={styles.offer__card}>
+                    <Image
+                      className={styles.offer__img}
+                      src={offer4}
+                      alt="Card image cap"
+                      priority
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title">{el.heading}</h5>
+                      <p className="card-text">{el.content}</p>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
 
-                <div className="card-body">
-                  <h5 className="card-title">Konsultacje psychologiczne</h5>
-                  <p className="card-text">
-                    Jednorazowe spotkanie z rodzicami/opiekunami dziecka
-                    pozwalające na określenie trudności z jaką się mierzą.
-                    Wsparcie oraz wyznaczenie odpowiednich kroków działania.
-                    Konsultacje z nastolatkami potrzebującymi wsparcia w
-                    codziennym mierzeniu się z trudnościami okresu dojrzewania.
-                  </p>
-                </div>
-              </div>
-            </li>
-            <li className={styles.offer__item}>
-              <div className="card">
-                <div className={styles.offer__imgContainer}>
-                  <Image
-                    className={styles.offer__img}
-                    src={offer2}
-                    alt="Card image cap"
-                    width={300}
-                    height={300}
-                    priority
-                  />
-                </div>
-                <div className="card-body">
-                  <h5 className="card-title">TERAPIA INDYWIDUALNA</h5>
-                  <p className="card-text">
-                    Terapia indywidualna zgodna z wcześniej opracowanym
-                    programem terapeutycznym. Stworzonym zgodnie z potrzebami
-                    oraz możliwościami dziecka. Terapia skierowana jest do
-                    dzieci i młodzieży potrzebujących wsparcia w sferze
-                    poznawczej, emocjonalnej czy społecznej. Zajęcia dedykowane
-                    są również dzieciom z autyzmem, zespołem Aspergera czy
-                    niepełnosprawnością intelektualną.
-                  </p>
-                </div>
-              </div>
-            </li>
-            <li className={styles.offer__item}>
-              <div className="card">
-                <div className={styles.offer__imgContainer}>
-                  <Image
-                    className={styles.offer__img}
-                    src={offer3}
-                    alt="Card image cap"
-                    width={300}
-                    height={300}
-                    priority
-                  />
-                </div>
-                <div className="card-body">
-                  <h5 className="card-title">
-                    TRENING UMIEJĘTNOŚCI SPOŁECZNYCH
-                  </h5>
-                  <p className="card-text">
-                    Trening TUS to zajęcia uspołeczniające dla dzieci i
-                    młodzieży. Są to spotkania w niewielkich 5-6 osobowych
-                    grupach. Podczas zajęć omawiamy i ćwiczymy umiejętności
-                    społeczne, które są potrzebne w codziennym funkcjonowaniu.
-                  </p>
-                </div>
-              </div>
-            </li> */}
-                        <li className={styles.offer__item}>
-              <div className={styles.offer__card}>
-                <Image
-                  className={styles.offer__img}
-                  src={offer4}
-                  alt="Card image cap"
-                  priority
-                />
-                <div className="card-body">
-                  <h5 className="card-title">DIAGNOZA PSYCHOLOGICZNA</h5>
-                  <p className="card-text">
-                    Trzyetapowa diagnoza psychologiczna składająca się z wywiadu
-                    z rodzicami, badaniem intelektu dziecka oraz obserwacją
-                    funkcjonowania dziecka w placówce przeprowadzona przez
-                    doświadczony zespół psychologów.
-                  </p>
-                </div>
-              </div>
-            </li>
-            <li className={styles.offer__item}>
-              <div className={styles.offer__card}>
-                <Image
-                  className={styles.offer__img}
-                  src={offer4}
-                  alt="Card image cap"
-                  priority
-                />
-                <div className="card-body">
-                  <h5 className="card-title">DIAGNOZA PSYCHOLOGICZNA</h5>
-                  <p className="card-text">
-                    Trzyetapowa diagnoza psychologiczna składająca się z wywiadu
-                    z rodzicami, badaniem intelektu dziecka oraz obserwacją
-                    funkcjonowania dziecka w placówce przeprowadzona przez
-                    doświadczony zespół psychologów.
-                  </p>
-                </div>
-              </div>
-            </li>
-            <li className={styles.offer__item}>
-              <div className={styles.offer__card}>
-                <Image
-                  className={styles.offer__img}
-                  src={offer4}
-                  alt="Card image cap"
-                  priority
-                />
-                <div className="card-body">
-                  <h5 className="card-title">DIAGNOZA PSYCHOLOGICZNA</h5>
-                  <p className="card-text">
-                    Trzyetapowa diagnoza psychologiczna składająca się z wywiadu
-                    z rodzicami, badaniem intelektu dziecka oraz obserwacją
-                    funkcjonowania dziecka w placówce przeprowadzona przez
-                    doświadczony zespół psychologów.
-                  </p>
-                </div>
-              </div>
-            </li>
-            <li className={styles.offer__item}>
-              <div className={styles.offer__card}>
-                <Image
-                  className={styles.offer__img}
-                  src={offer4}
-                  alt="Card image cap"
-                  priority
-                />
-                <div className="card-body">
-                  <h5 className="card-title">DIAGNOZA PSYCHOLOGICZNA</h5>
-                  <p className="card-text">
-                    Trzyetapowa diagnoza psychologiczna składająca się z wywiadu
-                    z rodzicami, badaniem intelektu dziecka oraz obserwacją
-                    funkcjonowania dziecka w placówce przeprowadzona przez
-                    doświadczony zespół psychologów.
-                  </p>
-                </div>
-              </div>
-            </li>
           </ul>
         </article>
       </section>
@@ -320,14 +209,13 @@ export default function Home() {
             <p className={styles.form__info}>* pole wymagane</p>
             <button>Wyślij</button>
           </form>
-          {/* <div className={styles.formArea__frame}> */}
+
           <Image
             className={styles.formArea__img}
             src={baby}
             alt="przykład ciast"
           />
         </div>
-        {/* </div> */}
       </section>
 
       <footer className={styles.footer}>

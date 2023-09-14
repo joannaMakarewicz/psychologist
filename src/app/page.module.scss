@@ -54,15 +54,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 15%;
+    padding: 15% 10%;
+    @media screen and (min-width:1024px) {
+      padding: 15%;
+    }
   }
 }
 
-.contactForm {
-  background-color: $green;
-  color: $white;
-  padding: 0;
-}
+
 .main {
   background-color: $white;
   display: grid;
@@ -95,7 +94,10 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 15%;
+    padding: 15% 10%;
+    @media screen and (min-width:1024px) {
+      padding: 15%;
+     }
   }
 }
 
@@ -138,8 +140,12 @@
 
 .quot {
   background-color: $beige;
-  padding: 16px;
+  
   text-align: center;
+  padding: 10%;
+  @media screen and (min-width:1024px) {
+    padding: 10% 16px;
+   }
 }
 
 .footer {
@@ -248,9 +254,12 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  padding: 3rem 16px;
   width: 80%;
   margin: 0 auto;
+  padding: 10% 0;
+  @media screen and (min-width: 1024px) {
+    padding: 10%;
+  }
   &__control {
     border: 0;
     border-radius: 0;
@@ -277,15 +286,20 @@
   }
 }
 .contactForm {
-  height: 500px;
   text-align: center;
   overflow: hidden;
+  background-color: $green;
+  color: $white;
+  padding: 0;
+
 }
 .formArea {
   background-color: $beige;
   color:$fontColor;
   display: grid;
+  
   @media screen and (min-width: 1024px) {
+    height: 60vh;
     grid-template-columns: 1fr 1fr;
   }
   &__frame {
@@ -300,10 +314,13 @@
     }
   }
   &__img {
-    height: 100%;
+    height: 40vh;
     object-fit: cover;
     object-position: center;
     width: 100%;
+    @media screen and (min-width: 1024px) {
+height: 100%;
+    }
   }
 }
 
@@ -311,6 +328,10 @@
   background-color: $green;
   color: $white;
   padding: 16px 10%;
+  @media screen and (min-width: 1024px) {
+  padding: 16px 7.5%;
+    
+       }
   &__heading {
     margin: 0;
   }
@@ -328,10 +349,10 @@
   }
   &__item {
     width: 100%;
-    margin: 0 auto;
+    margin: 16px auto;
   }
   &__list {
-    column-gap: 16px;
+    column-gap: 26px;
     display: grid;
     grid-template-columns: 1fr;
     padding: 0;
