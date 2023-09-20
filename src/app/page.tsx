@@ -10,6 +10,7 @@ import offer1 from "../assets/offer1.jpg";
 import offer2 from "../assets/offer2.jpg";
 import offer3 from "../assets/offer3.jpg";
 import offer4 from "../assets/offer4.jpg";
+import klaudia from "../assets/klaudia1.jpg";
 import styles from "./page.module.scss";
 
 const data = [
@@ -38,13 +39,13 @@ const data = [
 export default function Home() {
   return (
     <>
-      <header className={styles.header}>
-        <div className={styles.contact}>
+    <header className={styles.header}>
+    <div className={styles.header__contact}>
           <a
             href="/"
             target="_blank"
             rel="noreferrer"
-            className={styles.contact__icon}
+            className={styles.header__icon}
           >
             <BsFacebook />
           </a>
@@ -52,22 +53,13 @@ export default function Home() {
             href="/"
             target="_blank"
             rel="noreferrer"
-            className={styles.contact__icon}
+            className={styles.header__icon}
           >
             <BsInstagram />
           </a>
         </div>
-        <h1 className={styles.header__heading}>Klaudia Jędrzejewska</h1>
-        <a
-          href="/"
-          target="_blank"
-          rel="noreferrer"
-          className={styles.contact__icon}
-        >
-          508046549
-        </a>
-      </header>
-      <nav className={styles.nav}>
+    <p className={styles.header__heading}>Klaudia Jedrzejewska</p>
+    <nav className={styles.nav}>
         <ul className={styles.nav__list}>
           <li className={styles.nav__item}>Strona główna</li>
           <li className={styles.nav__item}>O mnie</li>
@@ -75,26 +67,32 @@ export default function Home() {
           <li className={styles.nav__item}>Kontakt</li>
         </ul>
       </nav>
+    </header>
+
       <section className={styles.main}>
         <div className={styles.main__image} />
 
-        <article className={styles.main__text}>
-          <h2 className={styles.main__heading}>
-            INDYWIDUALNE PODEJŚCIE DO POTRZEB KAŻDEGO DZIECKA
-          </h2>
-          <p className={styles.main__content}>
-            Prowadzę terapię psychologiczną dla dzieci i młodzieży. Terapia
-            poprzedzona jest wnikliwym badaniem potrzeb ale i umiejętności
-            młodego człowieka tak aby w jak najlepszym stopniu opracować dla
-            niego program terapeutyczny, na którym bazujemy podczas zajęć.
-            Podczas zajęć wspomagam rozwój sfery poznawczej emocjonalnej oraz
-            społecznej. Prowadzę terapię dzieci ze spektrum autyzmu, z
-            niepełnosprawnością intelektualną czy zaburzeniami lękowymi. Wiodącą
-            metodą mojej pracy jest terapia behawioralna w oparciu o Stosowaną
-            Analizę Zachowania.
-          </p>
-          <button className={styles.main__button}>Umów się</button>
-        </article>
+        <div className={styles.main__textContainer}>
+          <div className={styles.main__textBorder}>
+            <article className={styles.main__text}>
+              <h2 className={styles.main__heading}>
+                INDYWIDUALNE PODEJŚCIE DO POTRZEB KAŻDEGO DZIECKA
+              </h2>
+              <p className={styles.main__content}>
+                Prowadzę terapię psychologiczną dla dzieci i młodzieży. Terapia
+                poprzedzona jest wnikliwym badaniem potrzeb ale i umiejętności
+                młodego człowieka tak aby w jak najlepszym stopniu opracować dla
+                niego program terapeutyczny, na którym bazujemy podczas zajęć.
+                Podczas zajęć wspomagam rozwój sfery poznawczej emocjonalnej
+                oraz społecznej. Prowadzę terapię dzieci ze spektrum autyzmu, z
+                niepełnosprawnością intelektualną czy zaburzeniami lękowymi.
+                Wiodącą metodą mojej pracy jest terapia behawioralna w oparciu o
+                Stosowaną Analizę Zachowania.
+              </p>
+              <button className={styles.button}>Umów się</button>
+            </article>
+          </div>
+        </div>
       </section>
       <section className={styles.quot}>
         <h3>
@@ -153,7 +151,6 @@ export default function Home() {
                 </li>
               );
             })}
-
           </ul>
         </article>
       </section>
@@ -221,7 +218,11 @@ export default function Home() {
       <footer className={styles.footer}>
         <section className={styles.footer__article}>
           <div className={styles.footer__container}>
-            <img className="footer__logo" src="/" alt="chodź na ciacho" />
+            <Image
+              className={styles.footer__logo}
+              src={klaudia}
+              alt="chodź na ciacho"
+            />
           </div>
           <div>
             <h5 className={styles.footer__heading}>Klaudia Jakaś</h5>

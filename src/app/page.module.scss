@@ -5,10 +5,10 @@
   display: grid;
   grid-template-columns: 1fr;
   position: relative;
-  @media screen and (min-width:768px) {
+  @media screen and (min-width: 768px) {
     grid-template-columns: 1fr 2fr;
   }
-  @media screen and (min-width:1024px) {
+  @media screen and (min-width: 1024px) {
     grid-template-columns: 1fr 1fr 2fr;
   }
   &__content {
@@ -22,7 +22,7 @@
     opacity: 0.5;
     width: 100%;
     z-index: 1;
-    @media screen and (min-width:1024px) {
+    @media screen and (min-width: 1024px) {
       display: block;
     }
   }
@@ -31,7 +31,7 @@
     background-size: cover;
     background-position: 10% 30%;
     height: 40vh;
-    @media screen and (min-width:768px) {
+    @media screen and (min-width: 768px) {
       background-position: center;
       left: 0;
       position: absolute;
@@ -41,7 +41,7 @@
       z-index: 2;
       overflow: hidden;
     }
-    @media screen and (min-width:1024px) {
+    @media screen and (min-width: 1024px) {
       height: 80%;
       left: 15%;
       top: 10%;
@@ -55,57 +55,96 @@
     flex-direction: column;
     justify-content: center;
     padding: 15% 10%;
-    @media screen and (min-width:1024px) {
+    @media screen and (min-width: 1024px) {
       padding: 15%;
     }
   }
 }
 
+.header {
+  background-color: $beige;
+  box-shadow: 0 0 10px 0 $white;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  padding: 6px 16px;
+  width: 100%;
+  &__contact {
+    align-items: center;
+    display: flex;
+    justify-content: start;
+  }
+  &__heading {
+    align-items: center;
+    color:$gold;
+    display: flex;
+    font-size: 2rem;
+    font-weight: 400;
+    justify-content: center;
+    margin: 0 20%;
+    white-space: nowrap;
+  }
+  &__icon {
+    margin-right: 16px;
+  }
+}
 
 .main {
   background-color: $white;
   display: grid;
   grid-template-columns: 1fr;
-  height: 100%;
-  @media screen and (min-width:1024px) {
+  height: 80vh;
+  @media screen and (min-width: 1024px) {
     grid-template-columns: 1fr 1fr;
   }
   &__content {
     line-height: 1.7rem;
+    margin-bottom: 10%;
     padding-bottom: 0.83em;
+  }
+  &__heading{
+    font-size: 2rem;
   }
   &__image {
     background-image: url("../assets/klaudia1.jpg");
     background-size: cover;
     padding: 6px;
-    height: 50vh;
+    height: 100%;
     width: 100%;
-          @media screen and (min-width:768px) {
-   height: 70vh
+    @media screen and (min-width: 768px) {
+      height: 70vh;
+    }
+    @media screen and (min-width: 1024px) {
+      height: 100%;
+    }
   }
-      @media screen and (min-width:1024px) {
-   height: 100%;
-  }
+  &__textContainer {
+    background-color: $green;
   }
   &__text {
-    background-color: $green;
-    color: $white;
+    background-color: $white;
+    color: $fontColor;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 15% 10%;
-    @media screen and (min-width:1024px) {
-      padding: 15%;
-     }
+    margin: 15% 10%;
+    padding: 26px;
+    position:relative;
+    @media screen and (min-width: 1024px) {
+      margin: 2%;
+    }
+  }
+  &__textBorder {
+    background-color: transparent;
+    border: 1px solid #fff;
+    max-height: 60vh;
+    position: relative;
+    left:-100px;
+    top:100px;
   }
 }
 
 .nav {
-  background-color: $beige;
-  box-shadow: 0 4px 8px 0 $white;
-  display: flex;
-  justify-content: space-around;
   &__item {
     margin-left: 16px;
   }
@@ -113,39 +152,20 @@
     display: flex;
     justify-content: space-around;
     list-style: none;
-    margin: 0 15%;
-    padding: 6px 0;
     width: 100%;
   }
 }
 
-.header {
-  background-color: $beige;
-  border-bottom: 1px solid $white;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  width: 100vw;
-  &__heading {
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin: 0;
-  }
-}
 
-.contact__icon {
-  margin-right: 16px;
-  text-decoration: none;
-}
 
 .quot {
   background-color: $beige;
-  
+
   text-align: center;
   padding: 10%;
-  @media screen and (min-width:1024px) {
+  @media screen and (min-width: 1024px) {
     padding: 10% 16px;
-   }
+  }
 }
 
 .footer {
@@ -179,6 +199,7 @@
   }
   &__container {
     text-align: center;
+
     @media screen and (min-width: 768px) {
       align-items: flex-start;
       display: flex;
@@ -204,7 +225,9 @@
   &__logo {
     border-radius: 50%;
     margin: 0 0 32px;
-    width: 30%;
+    border: 50%;
+    height: 250px;
+    width: 250px;
     @media screen and (min-width: 1024px) {
       width: 50%;
       margin-bottom: 0;
@@ -291,13 +314,12 @@
   background-color: $green;
   color: $white;
   padding: 0;
-
 }
 .formArea {
   background-color: $beige;
-  color:$fontColor;
+  color: $fontColor;
   display: grid;
-  
+
   @media screen and (min-width: 1024px) {
     height: 60vh;
     grid-template-columns: 1fr 1fr;
@@ -319,7 +341,7 @@
     object-position: center;
     width: 100%;
     @media screen and (min-width: 1024px) {
-height: 100%;
+      height: 100%;
     }
   }
 }
@@ -329,9 +351,8 @@ height: 100%;
   color: $white;
   padding: 16px 10%;
   @media screen and (min-width: 1024px) {
-  padding: 16px 7.5%;
-    
-       }
+    padding: 16px 7.5%;
+  }
   &__heading {
     margin: 0;
   }
@@ -362,9 +383,23 @@ height: 100%;
       grid-template-columns: 1fr 1fr;
     }
     @media screen and (min-width: 1024px) {
- grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }
 }
 
-
+.button {
+  background-image: linear-gradient(
+      to left,
+      $gold,
+      $green
+    );
+    border: 0;
+    bottom:26px;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 18px;
+    padding: 16px;
+    position: absolute;
+    right: 26px;
+}
