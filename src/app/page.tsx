@@ -123,7 +123,7 @@ export default function Home() {
             kieruje się dobrem dziecka, w trakcie pracy stale podążam za jego
             potrzebami.
           </p>
-          <button>Umów się</button>
+          <button className={styles.button} >Umów się</button>
         </article>
       </section>
       <section className={styles.offer}>
@@ -137,12 +137,14 @@ export default function Home() {
               return (
                 <li className={styles.offer__item} key={Math.random()}>
                   <div className={styles.offer__card}>
+                    <div className={styles.offer__imgBorder}>
                     <Image
                       className={styles.offer__img}
                       src={offer4}
                       alt="Card image cap"
                       priority
                     />
+                    </div>
                     <div className="card-body">
                       <h5 className="card-title">{el.heading}</h5>
                       <p className="card-text">{el.content}</p>
@@ -204,7 +206,7 @@ export default function Home() {
               required
             />
             <p className={styles.form__info}>* pole wymagane</p>
-            <button>Wyślij</button>
+            <button className={styles.button}>Wyślij</button>
           </form>
 
           <Image

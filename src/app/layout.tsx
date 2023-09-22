@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Montserrat } from '@next/font/google';
 
 export const montserrat = Montserrat ({ 
-  weight: '400',
+  weight: ['400', '500', '700'],
   subsets: ['latin'],
   display: 'swap',
 })
