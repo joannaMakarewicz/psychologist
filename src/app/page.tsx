@@ -5,6 +5,7 @@ import { BsInstagram } from "react-icons/bs";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdAlternateEmail } from "react-icons/md";
+import { AiOutlineMenu } from "react-icons/ai";
 import baby from "../assets/baby.jpg";
 import offer1 from "../assets/offer1.jpg";
 import offer2 from "../assets/offer2.jpg";
@@ -58,7 +59,10 @@ export default function Home() {
             <BsInstagram />
           </a>
         </div>
-    <p className={styles.header__heading}>Klaudia Jedrzejewska</p>
+        <div className={styles.header__nameContainer}>
+        <p className={styles.header__heading}>Klaudia Jedrzejewska</p>
+        </div>
+    
     <nav className={styles.nav}>
         <ul className={styles.nav__list}>
           <li className={styles.nav__item}>Strona główna</li>
@@ -67,6 +71,7 @@ export default function Home() {
           <li className={styles.nav__item}>Kontakt</li>
         </ul>
       </nav>
+      <AiOutlineMenu className={styles.nav__hamburger}/>
     </header>
 
       <section className={styles.main}>
@@ -95,11 +100,11 @@ export default function Home() {
         </div>
       </section>
       <section className={styles.quot}>
-        <h3>
+        <h3 className={styles.quot__heading}>
           &quot;Dziecko chce być dobre. Jeśli nie umie - naucz. Jeśli nie wie -
           wytłumacz. Jeśli nie może - pomóż&quot;.
         </h3>
-        <p>Janusz Koraczak</p>
+        <p className={styles.quot__content}>Janusz Koraczak</p>
       </section>
       <section className={styles.about}>
         <div className={styles.about__image} />
@@ -130,7 +135,7 @@ export default function Home() {
         <article className={styles.offer__container}>
           <h4 className={styles.offer__heading}>OFEROWANE USŁUGI</h4>
           <p className={styles.offer__content}>
-            Wsparcie na każdym kroku drogi rozwoju
+            Wsparcie na każdym kroku drogi rozwoju.
           </p>
           <ul className={styles.offer__list}>
             {data.map((el) => {
@@ -146,8 +151,8 @@ export default function Home() {
                     />
                     </div>
                     <div className="card-body">
-                      <h5 className="card-title">{el.heading}</h5>
-                      <p className="card-text">{el.content}</p>
+                      <h5 className={styles.offer__title}>{el.heading}</h5>
+                      <p className={styles.offer__text}>{el.content}</p>
                     </div>
                   </div>
                 </li>
@@ -223,54 +228,53 @@ export default function Home() {
             <Image
               className={styles.footer__logo}
               src={klaudia}
-              alt="chodź na ciacho"
+              alt="Klaudia Jedrzejewska"
             />
           </div>
           <div>
-            <h5 className={styles.footer__heading}>Klaudia Jakaś</h5>
-            <p className={styles.footer__owner}>Klaudia</p>
+            <h5 className={styles.footer__heading}>Klaudia Jędrzejewska</h5>
+            <p className={styles.footer__owner}>Psycholog</p>
             <ul className={styles.footer__list}>
               <li>
                 <a href="/" target="_blank" rel="noreferrer">
-                  <FaLocationDot className="me-1" />
+                  <FaLocationDot className={styles.footer__endMargin} />
                 </a>
-                ul. Olecko
-                <span className="footer__list--special">Gdańsk</span>
+Gdańsk
               </li>
               <li className="text-nowrap">
                 <a href="/" target="_blank" rel="noreferrer">
-                  <MdAlternateEmail className="me-1" />
-                  joanna.milun@gmail.com
+                  <MdAlternateEmail className={styles.footer__endMargin} />
+                  klaudiajedrzejewska.psycholog@gmail.com
                 </a>
               </li>
               <li>
                 <a href="/" target="_blank" rel="noreferrer">
-                  <BsFillTelephoneFill className="me-1" />
-                  508046549
+                  <BsFillTelephoneFill className={styles.footer__endMargin}  />
+                  792 819 494
                 </a>
               </li>
             </ul>
           </div>
-          <div className="footer__contact col-md-3 col-sm-6 w-100">
+          <div className={styles.footer__contact}>
             <h5>Nawigacja</h5>
-            <p className="footer__special footer__special--margin">
+            <p className={`${styles.footer__special} ${styles.footer__specialMargin}`}>
               Polityka prywatności
             </p>
-            <p className="footer__special">Regulamin</p>
+            <p className={styles.footer__special }>Regulamin</p>
           </div>
-          <div className="col-md-3 col-sm-6 w-100 ">
+          <div>
             <h5>Obserwuj</h5>
-            <div className="fs-2 mt-4">
-              <a href="/" target="_blank" rel="noreferrer">
-                <BsFacebook className="me-3" />
+            <div >
+              <a href="https://www.facebook.com/profile.php?id=100093528214815" target="_blank" rel="noreferrer">
+                <BsFacebook className={`${styles.footer__endMargin} ${styles.footer__specialMargin}`}  />
               </a>
               <a href="/" target="_blank" rel="noreferrer">
-                <BsInstagram className="me-3" />
+                <BsInstagram  />
               </a>
             </div>
           </div>
         </section>
-        <div className="footer__author">makaDev</div>
+        <div className={styles.footer__author}>Joanna Makarewicz</div>
       </footer>
     </>
   );

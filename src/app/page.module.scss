@@ -13,6 +13,12 @@
   }
   &__content {
     line-height: 1.7rem;
+    margin: 8% 0;
+  }
+  &__heading {
+    font-size: 1.6rem;
+    margin: 0;
+    width: 100%;
   }
   &__image {
     background-image: url("../assets/hand.jpg");
@@ -54,7 +60,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 15% 10%;
+    padding: 8vw;
     @media screen and (min-width: 1024px) {
       padding: 15%;
     }
@@ -62,11 +68,12 @@
 }
 
 .header {
+  align-items: center;
   background-color: $beige;
   box-shadow: 0 0 10px 0 $white;
-  display: grid;
-  grid-template-columns: 1fr 2fr 2fr;
-  padding: 6px 16px;
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 26px;
   width: 100%;
   &__contact {
     align-items: center;
@@ -76,17 +83,33 @@
   &__heading {
     align-items: center;
     -webkit-text-fill-color: transparent;
-    background: linear-gradient(90deg,$green, $gold, $green, $gold );
+    background: linear-gradient(90deg, $green, $gold, $green, $gold);
     -webkit-background-clip: text;
     display: flex;
-    font-size: 2rem;
-    font-weight: 400;
+    font-size: 1.2rem;
+    font-weight: 500;
     justify-content: center;
-    margin: 0 20%;
+    letter-spacing: 0.6rem;
+    margin: 0;
     white-space: nowrap;
+    text-transform: uppercase;
+    @media screen and (min-width: 1024px) {
+      font-size: 1.5rem;
+      letter-spacing: 0.4rem;
+    }
   }
   &__icon {
-    margin-right: 16px;
+    align-items: center;
+    color: $green;
+    display: flex;
+    font-size: 1.4rem;
+    justify-content: center;
+    margin-right: 9px;
+  }
+  &__nameContainer {
+    align-items: center;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -101,11 +124,10 @@
   }
   &__content {
     line-height: 1.7rem;
-    margin-bottom: 10%;
-    padding-bottom: 0.83em;
+    margin: 8% 0;
   }
   &__heading {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     margin: 0;
     @media screen and (min-width: 1050px) {
       font-size: 1.7rem;
@@ -129,10 +151,10 @@
   }
   &__textContainer {
     background-color: $white;
+    padding: 8vw;
     @media screen and (min-width: 1024px) {
       background-color: $green;
     }
-   
   }
   &__text {
     background-color: $white;
@@ -141,47 +163,97 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    margin: 1%;
+    margin: 0;
     opacity: 0.9;
-    padding: 26px;
+    padding: 0;
     position: relative;
     @media screen and (min-width: 1024px) {
       margin: 2%;
+      padding: 26px;
+      position: relative;
+      width: auto;
     }
   }
   &__textBorder {
     background-color: transparent;
     border: 1px solid #fff;
-    margin: 5%;
+    margin: 0;
+    padding: 0;
     @media screen and (min-width: 1024px) {
-      margin: 0;
-      position: relative;
-      left: -100px;
-      top: 100px;
+      position: absolute;
+      right: 100px;
+      top: 180px;
       max-height: 60vh;
+      overflow: hidden;
+      max-width: 60vw;
+    }
+    @media screen and (min-width: 1300px) {
+      max-width: 50vw;
     }
   }
 }
 
 .nav {
+  &__hamburger {
+    color: $green;
+    font-size: 1.4rem;
+    @media screen and (min-width: 1024px) {
+      display: none;
+    }
+  }
   &__item {
-    margin-left: 16px;
+    color: $green;
+    font-size: 1.2rem;
+    margin-right: 24px;
   }
   &__list {
-    display: flex;
-    justify-content: space-around;
+    height: 100%;
+    left: -100%;
     list-style: none;
+    padding: 0;
+    position: absolute;
     width: 100%;
+    transition: 1s ease;
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      justify-content: space-around;
+      position: static;
+    }
+    &--open {
+      color: $gold;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      font-size: large;
+      height: 100vh;
+      justify-content: center;
+      line-height: 3em;
+      margin: 0;
+      padding: 0;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      transition: 1s ease;
+      z-index: 1;
+    }
   }
 }
 
 .quot {
   background-color: $beige;
-
   text-align: center;
-  padding: 8%;
+  padding: 8vw;
   @media screen and (min-width: 1024px) {
     padding: 8% 16px;
+  }
+  &__content {
+    margin: 0;
+  }
+  &__heading {
+    line-height: 2rem;
+    margin: 0;
+    margin-bottom: 4%;
+    opacity: 0.9;
   }
 }
 
@@ -193,22 +265,25 @@
   &__article {
     display: flex;
     flex-direction: column;
-    margin: 0 26px;
+    margin: 0 26px 30px;
     padding: 16px 0;
     @media screen and (min-width: 768px) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       padding: 0;
       width: 80vw;
-      margin: 0 auto;
+      margin: 0 auto 30px;
     }
     @media screen and (min-width: 1023px) {
       grid-template-columns: 1fr 2fr 2fr 1fr;
+      padding: 0 7.5%;
+      width: 100vw;
     }
   }
   &__author {
     border-top: 1px solid $beige;
     font-size: 0.8rem;
+    padding: 2px 0;
     text-align: center;
   }
   &__contact {
@@ -230,28 +305,31 @@
       justify-content: center;
     }
   }
+  &__endMargin {
+    margin-right: 6px;
+  }
   &__list {
     font-size: 0.9rem;
     list-style: none;
     margin-bottom: 1.5rem;
     padding: 0;
-    &--special {
-      display: block;
-    }
+  }
+  &__listSpecial {
+    display: block;
   }
   &__logo {
     border-radius: 50%;
     margin: 0 0 32px;
-    border: 50%;
-    height: 250px;
-    width: 250px;
-    @media screen and (min-width: 1024px) {
-      width: 50%;
+    height: 150px;
+    width: 150px;
+    @media screen and (min-width: 768px) {
       margin-bottom: 0;
+      padding: 10%;
     }
   }
   &__owner {
     font-size: 1rem;
+    margin: 0;
     margin-bottom: 1.5rem;
   }
   &__special {
@@ -259,11 +337,11 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     margin: 0px;
-    &--margin {
-      margin-top: 1.5rem;
-      @media screen and (min-width: 768px) {
-        margin-top: 2.5rem;
-      }
+  }
+  &__specialMargin {
+    margin-top: 1.5rem;
+    @media screen and (min-width: 768px) {
+      margin-top: 2.5rem;
     }
   }
 }
@@ -274,9 +352,9 @@
 }
 
 .footer h5 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: $beige;
+  color: $gold;
+  font-size: 1.3rem;
+  font-weight: 700;
   text-transform: uppercase;
   margin: 0;
 }
@@ -294,11 +372,13 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  justify-content: center;
   width: 80%;
   margin: 0 auto;
   padding: 10% 0;
   @media screen and (min-width: 1024px) {
-    padding: 10%;
+    padding: 8vh 5%;
   }
   &__control {
     border: 0;
@@ -331,6 +411,11 @@
   background-color: $green;
   color: $white;
   padding: 0;
+  &__heading {
+    font-size: 1.6rem;
+    margin: 0;
+    text-transform: uppercase;
+  }
 }
 .formArea {
   background-color: $beige;
@@ -359,6 +444,7 @@
     width: 100%;
     @media screen and (min-width: 1024px) {
       height: 100%;
+      overflow: hidden;
     }
   }
 }
@@ -366,19 +452,24 @@
 .offer {
   background-color: $green;
   color: $white;
-  padding: 16px 10%;
+  padding: 8vw 8vw 0;
   @media screen and (min-width: 1024px) {
     padding: 16px 7.5%;
   }
+  &__content {
+    margin: 4vw 0 8vw;
+  }
   &__heading {
+    font-size: 1.6rem;
     margin: 0;
   }
   &__img {
-    height: calc(96% - 2px);
-    width: calc(96% - 2px);
+    height: 96%;
+    width: 96%;
     margin: 2%;
     object-fit: cover;
     object-position: center;
+    overflow: hidden;
   }
   // &__imgContainer {
   //   height: 150px;
@@ -388,10 +479,12 @@
   // }
   &__imgBorder {
     border: 1px solid $white;
+    height: 100%;
+    width: 100%;
   }
   &__item {
     width: 100%;
-    margin: 16px auto;
+    margin: 0 0 8vw;
   }
   &__list {
     column-gap: 26px;
@@ -406,6 +499,15 @@
     @media screen and (min-width: 1024px) {
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+  }
+  &__text {
+    line-height: 1.7rem;
+    opacity: 0.8;
+  }
+  &__title {
+    color: $gold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
   }
 }
 
