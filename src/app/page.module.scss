@@ -487,11 +487,14 @@ width: 150px;
   background-color: $green;
   color: $white;
   padding: 8vw 8vw 0;
-  // @media screen and (min-width: 1024px) {
-  //   padding:  7.5%;
-  // }
+  @media screen and (min-width: 1024px) {
+    padding:  5% 7.5% 0;
+  }
   &__content {
     margin: 4vw 0 8vw;
+    @media screen and (min-width: 1024px) {
+      margin: 4vw 0;
+    }
   }
   &__heading {
     font-size: 1.6rem;
