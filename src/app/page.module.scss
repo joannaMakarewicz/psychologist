@@ -313,7 +313,9 @@
   }
   &__container {
     text-align: center;
-
+padding: 0 16px 16px 0;
+height: 150px;
+width: 150px;
     @media screen and (min-width: 768px) {
       align-items: flex-start;
       display: flex;
@@ -325,6 +327,10 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      margin-right: 16px;;
+    }
+    @media screen and (min-width: 1300px) {
+      margin:0;
     }
   }
   &__endMargin {
@@ -347,18 +353,11 @@
   }
   &__logo {
     border-radius: 50%;
+    height: 100%;
     margin: 0 0 32px;
-    height: 150px;
-    width: 150px;
+    width: 100%;
     @media screen and (min-width: 768px) {
       margin-bottom: 0;
-      padding: 0 16px 16px 0;
-    }
-    @media screen and (min-width: 1024px) {
-      margin-right: 16px;;
-    }
-    @media screen and (min-width: 1300px) {
-      margin: 0;
       padding: 0;
     }
   }
