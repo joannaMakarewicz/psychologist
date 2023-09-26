@@ -242,7 +242,7 @@ export default function Home() {
                 Gdańsk
               </li>
               <li className="text-nowrap">
-                <a href="/" target="_blank" rel="noreferrer">
+                <a href="/" target="_blank" rel="noreferrer" >
                   <MdAlternateEmail className={styles.footer__endMargin} />
                   klaudiajedrzejewska.psycholog@gmail.com
                 </a>
@@ -271,12 +271,17 @@ export default function Home() {
                 href="https://www.facebook.com/profile.php?id=100093528214815"
                 target="_blank"
                 rel="noreferrer"
+                className={styles.footer__icon}
               >
                 <BsFacebook
                   className={`${styles.footer__endMargin} ${styles.footer__specialMargin}`}
                 />
               </a>
-              <a href="/" target="_blank" rel="noreferrer">
+              <a 
+              href="/" 
+              target="_blank" 
+              rel="noreferrer"
+              className={styles.footer__icon}>
                 <BsInstagram />
               </a>
             </div>
