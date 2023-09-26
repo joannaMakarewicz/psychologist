@@ -40,8 +40,8 @@ const data = [
 export default function Home() {
   return (
     <>
-    <header className={styles.header}>
-    <div className={styles.header__contact}>
+      <header className={styles.header}>
+        <div className={styles.header__contact}>
           <a
             href="/"
             target="_blank"
@@ -60,19 +60,19 @@ export default function Home() {
           </a>
         </div>
         <div className={styles.header__nameContainer}>
-        <p className={styles.header__heading}>Klaudia Jedrzejewska</p>
+          <p className={styles.header__heading}>Klaudia Jedrzejewska</p>
         </div>
-    
-    <nav className={styles.nav}>
-        <ul className={styles.nav__list}>
-          <li className={styles.nav__item}>Strona główna</li>
-          <li className={styles.nav__item}>O mnie</li>
-          <li className={styles.nav__item}>Oferta</li>
-          <li className={styles.nav__item}>Kontakt</li>
-        </ul>
-      </nav>
-      <AiOutlineMenu className={styles.nav__hamburger}/>
-    </header>
+
+        <nav className={styles.nav}>
+          <ul className={styles.nav__list}>
+            <li className={styles.nav__item}>Strona główna</li>
+            <li className={styles.nav__item}>O mnie</li>
+            <li className={styles.nav__item}>Oferta</li>
+            <li className={styles.nav__item}>Kontakt</li>
+          </ul>
+        </nav>
+        <AiOutlineMenu className={styles.nav__hamburger} />
+      </header>
 
       <section className={styles.main}>
         <div className={styles.main__image} />
@@ -128,7 +128,7 @@ export default function Home() {
             kieruje się dobrem dziecka, w trakcie pracy stale podążam za jego
             potrzebami.
           </p>
-          <button className={styles.button} >Umów się</button>
+          <button className={styles.button}>Umów się</button>
         </article>
       </section>
       <section className={styles.offer}>
@@ -143,12 +143,12 @@ export default function Home() {
                 <li className={styles.offer__item} key={Math.random()}>
                   <div className={styles.offer__card}>
                     <div className={styles.offer__imgBorder}>
-                    <Image
-                      className={styles.offer__img}
-                      src={offer4}
-                      alt="Card image cap"
-                      priority
-                    />
+                      <Image
+                        className={styles.offer__img}
+                        src={offer4}
+                        alt="Card image cap"
+                        priority
+                      />
                     </div>
                     <div className="card-body">
                       <h5 className={styles.offer__title}>{el.heading}</h5>
@@ -239,7 +239,7 @@ export default function Home() {
                 <a href="/" target="_blank" rel="noreferrer">
                   <FaLocationDot className={styles.footer__endMargin} />
                 </a>
-Gdańsk
+                Gdańsk
               </li>
               <li className="text-nowrap">
                 <a href="/" target="_blank" rel="noreferrer">
@@ -249,7 +249,7 @@ Gdańsk
               </li>
               <li>
                 <a href="/" target="_blank" rel="noreferrer">
-                  <BsFillTelephoneFill className={styles.footer__endMargin}  />
+                  <BsFillTelephoneFill className={styles.footer__endMargin} />
                   792 819 494
                 </a>
               </li>
@@ -257,19 +257,27 @@ Gdańsk
           </div>
           <div className={styles.footer__contact}>
             <h5>Nawigacja</h5>
-            <p className={`${styles.footer__special} ${styles.footer__specialMargin}`}>
+            <p
+              className={`${styles.footer__special} ${styles.footer__specialMargin}`}
+            >
               Polityka prywatności
             </p>
-            <p className={styles.footer__special }>Regulamin</p>
+            <p className={styles.footer__special}>Regulamin</p>
           </div>
           <div>
             <h5>Obserwuj</h5>
-            <div >
-              <a href="https://www.facebook.com/profile.php?id=100093528214815" target="_blank" rel="noreferrer">
-                <BsFacebook className={`${styles.footer__endMargin} ${styles.footer__specialMargin}`}  />
+            <div>
+              <a
+                href="https://www.facebook.com/profile.php?id=100093528214815"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <BsFacebook
+                  className={`${styles.footer__endMargin} ${styles.footer__specialMargin}`}
+                />
               </a>
               <a href="/" target="_blank" rel="noreferrer">
-                <BsInstagram  />
+                <BsInstagram />
               </a>
             </div>
           </div>
