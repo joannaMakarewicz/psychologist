@@ -9,33 +9,38 @@ import { AiOutlineMenu } from "react-icons/ai";
 import baby from "../assets/baby.jpg";
 import offer1 from "../assets/offer1.jpg";
 import offer2 from "../assets/offer2.jpg";
-import offer3 from "../assets/offer3.jpg";
+import offer5 from "../assets/offer5.jpg";
 import offer4 from "../assets/offer4.jpg";
-import klaudia from "../assets/klaudia1.jpg";
+import klaudiaLogo from "../assets/klaudiaLogo.png";
 import styles from "./page.module.scss";
 
 const data = [
   {
     heading: "Konsultacje psychologiczne",
+    image: offer1,
     content:
       "Jednorazowe spotkanie z rodzicami/opiekunami dziecka pozwalające na określenie trudności z jaką się mierzą. Wsparcie oraz wyznaczenie odpowiednich kroków działania. Konsultacje z nastolatkami potrzebującymi wsparcia w codziennym mierzeniu się z trudnościami okresu dojrzewania.",
   },
   {
     heading: "Terapia indywidualna",
+    image: offer2,
     content:
       "Terapia indywidualna zgodna z wcześniej opracowanym programem terapeutycznym. Stworzonym zgodnie z potrzebami oraz możliwościami dziecka. Terapia skierowana jest do dzieci i młodzieży potrzebujących wsparcia w sferze poznawczej, emocjonalnej czy społecznej. Zajęcia dedykowane są również dzieciom z autyzmem, zespołem Aspergera czy niepełnosprawnością intelektualną.",
   },
   {
     heading: "Trening umiejętności społecznych",
+    image: offer5,
     content:
       "Trening TUS to zajęcia uspołeczniające dla dzieci i młodzieży. Są to spotkania w niewielkich 5-6 osobowych grupach. Podczas zajęć omawiamy i ćwiczymy umiejętności społeczne, które są potrzebne w codziennym funkcjonowaniu.",
   },
   {
     heading: "Diagnoza psychologiczna",
+    image: offer4,
     content:
       "Trzyetapowa diagnoza psychologiczna składająca się z wywiadu z rodzicami, badaniem intelektu dziecka oraz obserwacją funkcjonowania dziecka w placówce przeprowadzona przez doświadczony zespół psychologów.",
   },
 ];
+
 
 export default function Home() {
   return (
@@ -149,7 +154,7 @@ export default function Home() {
                     <div className={styles.offer__imgBorder}>
                       <Image
                         className={styles.offer__img}
-                        src={offer4}
+                        src={el.image}
                         alt="Card image cap"
                         priority
                       />
@@ -233,7 +238,7 @@ export default function Home() {
           <div className={styles.footer__container}>
             <Image
               className={styles.footer__logo}
-              src={klaudia}
+              src={klaudiaLogo}
               alt="Klaudia Jedrzejewska"
             />
           </div>

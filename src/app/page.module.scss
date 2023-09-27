@@ -60,7 +60,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top:60px;
+    margin-top: 60px;
     padding: 8vw;
     @media screen and (min-width: 1024px) {
       padding: 15%;
@@ -76,8 +76,8 @@
   justify-content: space-between;
   min-height: 100px;
   padding: 16px;
-  position:fixed;
-  top:0;
+  position: fixed;
+  top: 0;
   width: 100%;
   z-index: 5;
   &__contact {
@@ -87,7 +87,6 @@
       display: flex;
       justify-content: flex-start;
     }
-
   }
   &__heading {
     align-items: center;
@@ -98,7 +97,7 @@
     font-size: 1.4rem;
     font-weight: 500;
     justify-content: center;
-    letter-spacing: .5rem;
+    letter-spacing: 0.5rem;
     margin: 0;
     text-transform: uppercase;
     @media screen and (min-width: 425px) {
@@ -106,11 +105,11 @@
     }
     @media screen and (min-width: 1024px) {
       font-size: 1.4rem;
-      letter-spacing: .5rem;
+      letter-spacing: 0.5rem;
     }
     @media screen and (min-width: 1200px) {
       font-size: 1.6rem;
-      letter-spacing: .7rem;
+      letter-spacing: 0.7rem;
     }
     @media screen and (min-width: 1300px) {
       font-size: 1.8rem;
@@ -203,7 +202,7 @@
       max-height: 60vh;
       overflow: hidden;
       max-width: 60vw;
-      top:210px;
+      top: 210px;
     }
     @media screen and (min-width: 1300px) {
       max-width: 50vw;
@@ -212,7 +211,7 @@
 }
 
 .mainContainer {
-  display:block;
+  display: block;
   margin-top: 100px;
 }
 .nav {
@@ -233,7 +232,7 @@
     height: 100%;
     left: -100%;
     list-style: none;
-    margin:0;
+    margin: 0;
     padding: 0;
     position: absolute;
     width: 100%;
@@ -269,7 +268,7 @@
   background-size: cover;
   background-position: center;
   text-align: center;
-  opacity: .9;
+  opacity: 0.9;
   padding: 8vw;
   @media screen and (min-width: 1024px) {
     padding: 8% 16px;
@@ -312,10 +311,10 @@
     }
   }
   &__author {
-    color:$gold;
+    color: $gold;
     border-top: 1px solid $gold;
     font-size: 0.8rem;
-    opacity:0.8;
+    opacity: 0.8;
     padding: 2px 0;
     text-align: center;
   }
@@ -323,13 +322,13 @@
     margin-bottom: 1.5rem;
   }
   &__container {
+    display: flex;
+    justify-content: center;
     text-align: center;
-padding: 0 16px 16px 0;
-height: 150px;
-width: 150px;
+    padding: 0 16px 16px 0;
+    width: 100%;
     @media screen and (min-width: 768px) {
       align-items: flex-start;
-      display: flex;
       flex-direction: column;
       justify-content: flex-start;
     }
@@ -338,19 +337,17 @@ width: 150px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      margin-right: 16px;;
+      margin-right: 16px;
     }
     @media screen and (min-width: 1300px) {
-      margin:0;
+      margin: 0;
     }
   }
   &__endMargin {
     margin-right: 6px;
   }
   &__icon {
-
     font-size: 1.5rem;
-    
   }
   &__list {
     font-size: 0.9rem;
@@ -363,10 +360,10 @@ width: 150px;
     display: block;
   }
   &__logo {
-    border-radius: 50%;
-    height: 100%;
+    height: 150px;
     margin: 0 0 32px;
-    width: 100%;
+    width: 150px;
+    overflow: hidden;
     @media screen and (min-width: 768px) {
       margin-bottom: 0;
       padding: 0;
@@ -466,10 +463,10 @@ width: 150px;
   background-color: $beige;
   color: $fontColor;
   display: grid;
-margin-top:100px;
-@media screen and (min-width: 768px) {
-  margin-top:60px;
-}
+  margin-top: 100px;
+  @media screen and (min-width: 768px) {
+    margin-top: 60px;
+  }
   @media screen and (min-width: 1024px) {
     height: 60vh;
     grid-template-columns: 1fr 1fr;
@@ -502,10 +499,10 @@ margin-top:100px;
   color: $white;
   padding: 8vw 8vw 0;
   @media screen and (min-width: 1024px) {
-    padding:  5% 7.5% 0;
+    padding: 5% 7.5% 0;
   }
   &__container {
-    margin-top:50px;
+    margin-top: 50px;
   }
   &__content {
     margin: 4vw 0 8vw;
