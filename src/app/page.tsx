@@ -11,7 +11,7 @@ import offer1 from "../assets/offer1.jpg";
 import offer2 from "../assets/offer2.jpg";
 import offer5 from "../assets/offer5.jpg";
 import offer4 from "../assets/offer4.jpg";
-import klaudiaLogo from "../assets/klaudiaLogo.png";
+import logo from "../assets/logoDuze.png";
 import styles from "./page.module.scss";
 
 const data = [
@@ -238,7 +238,7 @@ export default function Home() {
           <div className={styles.footer__container}>
             <Image
               className={styles.footer__logo}
-              src={klaudiaLogo}
+              src={logo}
               alt="Klaudia Jedrzejewska"
             />
           </div>
