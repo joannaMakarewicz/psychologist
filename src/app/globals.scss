@@ -16,6 +16,8 @@ body {
   background-color: $beige;
   color:$fontColor;
   margin:0;
+  min-width: 100vw;
+  min-height: 100vh;
   padding: 0;
 }
 

@@ -60,6 +60,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top:60px;
     padding: 8vw;
     @media screen and (min-width: 1024px) {
       padding: 15%;
@@ -73,6 +74,7 @@
   box-shadow: 0 0 10px 0 $white;
   display: flex;
   justify-content: space-between;
+  min-height: 100px;
   padding: 16px;
   position:fixed;
   top:0;
@@ -211,7 +213,8 @@
 }
 
 .mainContainer {
-  margin-top: 70px;
+  display:block;
+  margin-top: 100px;
 }
 .nav {
   &__hamburger {
@@ -264,6 +267,7 @@
 .quot {
   background-color: $beige;
   text-align: center;
+  opacity: .9;
   padding: 8vw;
   @media screen and (min-width: 1024px) {
     padding: 8% 16px;
@@ -460,7 +464,10 @@ width: 150px;
   background-color: $beige;
   color: $fontColor;
   display: grid;
-
+margin-top:100px;
+@media screen and (min-width: 768px) {
+  margin-top:60px;
+}
   @media screen and (min-width: 1024px) {
     height: 60vh;
     grid-template-columns: 1fr 1fr;
