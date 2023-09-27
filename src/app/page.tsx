@@ -40,7 +40,7 @@ const data = [
 export default function Home() {
   return (
     <>
-      <header className={styles.header}>
+      <header className={styles.header} >
         <div className={styles.header__contact}>
           <a
             href="/"
@@ -60,21 +60,25 @@ export default function Home() {
           </a>
         </div>
         <div className={styles.header__nameContainer}>
-          <p className={styles.header__heading}>Klaudia Jedrzejewska</p>
+          <a href="#top" className={styles.header__heading}>Klaudia Jedrzejewska</a>
         </div>
 
         <nav className={styles.nav}>
           <ul className={styles.nav__list}>
-            <li className={styles.nav__item}>Strona główna</li>
-            <li className={styles.nav__item}>O mnie</li>
-            <li className={styles.nav__item}>Oferta</li>
-            <li className={styles.nav__item}>Kontakt</li>
+            <li className={styles.nav__item}>
+              <a href="#top">Strona główna</a></li>
+            <li className={styles.nav__item}>
+              <a href="#about">O mnie</a></li>
+            <li className={styles.nav__item}>
+            <a href="#offer">Oferta</a></li>
+            <li className={styles.nav__item}>
+            <a href="#contact">Kontakt</a></li>
           </ul>
         </nav>
         <AiOutlineMenu className={styles.nav__hamburger} />
       </header>
-
-      <section className={styles.main}>
+<main className={styles.mainContainer} id="top">
+<section className={styles.main} >
         <div className={styles.main__image} />
 
         <div className={styles.main__textContainer}>
@@ -94,7 +98,7 @@ export default function Home() {
                 Wiodącą metodą mojej pracy jest terapia behawioralna w oparciu o
                 Stosowaną Analizę Zachowania.
               </p>
-              <button className={styles.button}>Umów się</button>
+              <a href="#contact" className={styles.button}>Umów się</a>
             </article>
           </div>
         </div>
@@ -106,12 +110,12 @@ export default function Home() {
         </h3>
         <p className={styles.quot__content}>Janusz Koraczak</p>
       </section>
-      <section className={styles.about}>
+      <section className={styles.about} id="about">
         <div className={styles.about__image} />
         <div className={styles.about__image2} />
         <div></div>
         <article className={styles.about__text}>
-          <h4 className={styles.about__heading}>POZNAJ MNIE I MOJĄ PRACĘ</h4>
+          <h4 className={styles.about__heading} >POZNAJ MNIE I MOJĄ PRACĘ</h4>
           <p className={styles.about__content}>
             Nazywam się Klaudia Jędrzejewska i pracuję jako psycholog na terenie
             Trójmiasta i okolic. Swoje doświadczenie zdobyłam podczas pracy w
@@ -128,10 +132,10 @@ export default function Home() {
             kieruje się dobrem dziecka, w trakcie pracy stale podążam za jego
             potrzebami.
           </p>
-          <button className={styles.button}>Umów się</button>
+          <a href="#contact" className={styles.button}>Umów się</a>
         </article>
       </section>
-      <section className={styles.offer}>
+      <section className={styles.offer} id="offer">
         <article className={styles.offer__container}>
           <h4 className={styles.offer__heading}>OFEROWANE USŁUGI</h4>
           <p className={styles.offer__content}>
@@ -161,7 +165,7 @@ export default function Home() {
           </ul>
         </article>
       </section>
-      <section className={styles.contactForm}>
+      <section className={styles.contactForm} id="contact">
         <div className={styles.formArea}>
           <form className={styles.form}>
             <h5 className={styles.contactForm__heading}>Napisz do mnie</h5>
@@ -221,6 +225,8 @@ export default function Home() {
           />
         </div>
       </section>
+</main>
+
 
       <footer className={styles.footer}>
         <section className={styles.footer__article}>

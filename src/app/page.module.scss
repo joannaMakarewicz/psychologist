@@ -74,8 +74,10 @@
   display: flex;
   justify-content: space-between;
   padding: 16px;
+  position:fixed;
+  top:0;
   width: 100%;
-  
+  z-index: 5;
   &__contact {
     display: none;
     @media screen and (min-width: 1024px) {
@@ -208,6 +210,9 @@
   }
 }
 
+.mainContainer {
+  margin-top: 70px;
+}
 .nav {
   &__hamburger {
     color: $green;
