@@ -15,7 +15,7 @@ import offer2 from "../assets/offer2.jpg";
 import offer5 from "../assets/offer5.jpg";
 import offer4 from "../assets/offer4.jpg";
 import logo from "../assets/logoDuze.png";
-import styles from "./page.scss";
+import "./page.scss";
 import emailjs from "@emailjs/browser";
 
 const data = [
@@ -76,6 +76,7 @@ export default function Home() {
       setLoading(false);
     }, 200);
   };
+
   const showMenu = () => {
     setActive(!active);
   };
@@ -104,9 +105,9 @@ export default function Home() {
           </a>
         </div>
         <div className="header__nameContainer">
-          <a href="#top" className="header__heading">
+          <Link href="/" className="header__heading">
             Klaudia Jedrzejewska
-          </a>
+          </Link>
         </div>
 
         <nav className="nav">
@@ -114,16 +115,16 @@ export default function Home() {
             className={active ? "nav__list nav__list--open" : "nav__list"}
           >
             <li className="nav__item">
-              <a href="#top">Strona główna</a>
+              <Link href="#top" className={active ? "activeStatus" : "inactiveStatus"}>Strona główna</Link>
             </li>
             <li className="nav__item">
-              <a href="#about">O mnie</a>
+              <Link href="#about">O mnie</Link>
             </li>
             <li className="nav__item">
-              <a href="#offer">Oferta</a>
+              <Link href="#offer">Oferta</Link>
             </li>
             <li className="nav__item">
-              <a href="#contact">Kontakt</a>
+              <Link href="#contact">Kontakt</Link>
             </li>
           </ul>
         </nav>
@@ -297,13 +298,13 @@ export default function Home() {
 
       <footer className="footer">
         <section className="footer__article">
-          <div className="footer__container">
+          <Link className="footer__container" href="/">
             <Image
               className="footer__logo"
               src={logo}
               alt="Klaudia Jedrzejewska"
             />
-          </div>
+          </Link>
           <div>
             <h5 className="footer__heading">Klaudia Jędrzejewska</h5>
             <p className="footer__owner">Psycholog</p>
@@ -328,7 +329,7 @@ export default function Home() {
               </li>
             </ul>
           </div>
-          <div className={styles.footer__contact}>
+          <div className="footer__contact">
             <h5>Nawigacja</h5>
             <p
               className="footer__special footer__specialMargin"
