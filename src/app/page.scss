@@ -593,18 +593,7 @@
   padding: 16px;
 }
 
-.activeStatus {
-  color: red;
-  text-decoration:underline;
-  text-decoration-style: dotted;
-  text-decoration-thickness:0.1rem ;
-  text-underline-offset: 0.4rem;
-  &:hover {
-    color: blue;
-  }
+.active {
+  color: $gold;
 }
 
-.inactiveStatus {
-  color: yellow;
-  text-decoration: none;
-}

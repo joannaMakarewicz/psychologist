@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useRouter } from"next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { BsFacebook } from "react-icons/bs";
@@ -49,6 +50,34 @@ export default function Home() {
   const [loading, setLoading] = useState<boolean>(false);
   const [status, setStatus] = useState<boolean>(false);
   const [active, setActive] = useState<boolean>(false);
+  const [activeLink, setActiveLink]=useState<string>('section1');
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section");
+      const scrollPosition = window.scrollY;
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if(
+          scrollPosition>=sectionTop-70 && scrollPosition < sectionTop + sectionHeight - 70
+        ) {
+          setActiveLink(section.id);
+        }
+      })
+    }
+    window.addEventListener("scroll", handleScroll);
+    return ()=> {
+      window.removeEventListener("scroll", handleScroll);
+    }
+  }, [])
+
+  const handleLinkClick = (link:any) => {
+    setActiveLink(link);
+    router.push(link)
+  }
 
   const sendEmail = async (e: any) => {
     e.preventDefault();
@@ -81,7 +110,7 @@ export default function Home() {
     setActive(!active);
   };
 
-  console.log(active);
+  console.log(activeLink);
 
   return (
     <>
@@ -115,16 +144,16 @@ export default function Home() {
             className={active ? "nav__list nav__list--open" : "nav__list"}
           >
             <li className="nav__item">
-              <Link href="#top" className={active ? "activeStatus" : "inactiveStatus"}>Strona główna</Link>
+              <Link href="#section1" className={activeLink === 'section1' ? "active": ""} onClick={() => handleLinkClick("/section1")}>Strona główna</Link>
             </li>
             <li className="nav__item">
-              <Link href="#about">O mnie</Link>
+              <Link href="#section2" className={activeLink === 'section2' ? "active": ""} onClick={() => handleLinkClick("/section2")}>O mnie</Link>
             </li>
             <li className="nav__item">
-              <Link href="#offer">Oferta</Link>
+              <Link href="#section3" className={activeLink === 'section3' ? "active": ""} onClick={() => handleLinkClick("/section3")}>Oferta</Link>
             </li>
             <li className="nav__item">
-              <Link href="#contact">Kontakt</Link>
+              <Link href="#section4" className={activeLink === 'section4' ? "active": ""} onClick={() => handleLinkClick("/section4")}>Kontakt</Link>
             </li>
           </ul>
         </nav>
@@ -139,8 +168,8 @@ export default function Home() {
             )}
           </>
       </header>
-      <main className="mainContainer" id="top">
-        <section className="main">
+      <main className="mainContainer" >
+        <section className="main" id="section1">
           <div className="main__image" />
 
           <div className="main__textContainer">
@@ -175,7 +204,7 @@ export default function Home() {
           </h3>
           <p className="quot__content">Janusz Koraczak</p>
         </section>
-        <section className="about" id="about">
+        <section className="about" id="section2">
           <div className="about__image" />
           <div className="about__image2" />
           <div></div>
@@ -202,7 +231,7 @@ export default function Home() {
             </a>
           </article>
         </section>
-        <section className="offer" id="offer">
+        <section className="offer" id="section3">
           <article className="offer__container">
             <h4 className="offer__heading">OFEROWANE USŁUGI</h4>
             <p className="offer__content">
@@ -232,7 +261,7 @@ export default function Home() {
             </ul>
           </article>
         </section>
-        <section className="contactForm" id="contact">
+        <section className="contactForm" id="section4">
           <div className="formArea">
             <form className="form" onSubmit={sendEmail}>
               <h5 className="contactForm__heading">Napisz do mnie</h5>
