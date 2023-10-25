@@ -224,6 +224,9 @@
     @media screen and (min-width: 1024px) {
       display: none;
     }
+    &:hover {
+      color:$gold;
+    }
   }
   &__item {
     color: $gold;
@@ -239,7 +242,7 @@
         text-transform:none;
       }
       &:hover {
-        color: $green;
+        color: $gold;
       }
     }
   }
