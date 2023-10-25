@@ -79,7 +79,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 5;
+  z-index:9;
   &__contact {
     display: none;
     @media screen and (min-width: 1024px) {
@@ -219,6 +219,8 @@
     color: $green;
     font-size: 1.6rem;
     min-width: 22px;
+    z-index: 10;
+    cursor: pointer;
     @media screen and (min-width: 1024px) {
       display: none;
     }
@@ -236,14 +238,18 @@
     padding: 0;
     position: absolute;
     width: 100%;
+    top:0;
     transition: 1s ease;
+    z-index: 2;
     @media screen and (min-width: 1024px) {
       display: flex;
       justify-content: space-around;
       position: static;
     }
     &--open {
-      color: $gold;
+      background-color: $beige;
+      background-image: url("../assets/quotBackground3.png");
+      color: red;
       align-items: center;
       display: flex;
       flex-direction: column;
@@ -257,14 +263,13 @@
       left: 0;
       width: 100vw;
       transition: 1s ease;
-      z-index: 1;
     }
   }
 }
 
 .quot {
   background-color: $beige;
-  background-image: url("../assets/quotBackgound3.png");
+  background-image: url("../assets/quotBackground3.png");
   background-size: cover;
   background-position: center;
   text-align: center;
