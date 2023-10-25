@@ -76,6 +76,7 @@ export default function Home() {
 
   const handleLinkClick = (link:any) => {
     setActiveLink(link);
+    setActive(false);
     router.push(link)
   }
 
