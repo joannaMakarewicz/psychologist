@@ -24,5 +24,8 @@ body {
 a {
   color:$fontColor;
   text-decoration: none;
+  @media screen and (min-width:1024px) {
+    color:$fontColor;
+  }
 }
 
