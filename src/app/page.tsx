@@ -51,6 +51,7 @@ export default function Home() {
   const [loading, setLoading] = useState<boolean>(false);
   const [status, setStatus] = useState<boolean>(false);
   const [active, setActive] = useState<boolean>(false);
+
   const [activeLink, setActiveLink]=useState<string>('section1');
   const router = useRouter();
 
@@ -111,8 +112,6 @@ export default function Home() {
   const showMenu = () => {
     setActive(!active);
   };
-
-  console.log(activeLink);
 
   return (
     <>
@@ -316,7 +315,7 @@ export default function Home() {
                 required
               />
               <p className="form__info">* pole wymagane</p>
-              <button className="button">Wyślij</button>
+              <LoadingButton className="button" loading={loading}>Wyślij</LoadingButton>
             </form>
 
             <Image
