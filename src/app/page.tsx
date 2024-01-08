@@ -18,6 +18,7 @@ import offer4 from "../assets/offer4.jpg";
 import logo from "../assets/logoDuze.png";
 import "./page.scss";
 import emailjs from "@emailjs/browser";
+import LoadingButton from "@/components/LoadingButton/LoadingButton";
 
 const data = [
   {
@@ -50,6 +51,7 @@ export default function Home() {
   const [loading, setLoading] = useState<boolean>(false);
   const [status, setStatus] = useState<boolean>(false);
   const [active, setActive] = useState<boolean>(false);
+
   const [activeLink, setActiveLink]=useState<string>('section1');
   const router = useRouter();
 
@@ -86,10 +88,10 @@ export default function Home() {
 
     emailjs
       .sendForm(
-        "service_8sjpl4f",
-        "template_96glbjq",
+        "service_cegqeco",
+        "template_c9qk8w7",
         e.target,
-        "gxhVuR-MaQt-BRs6F"
+        "2GSQoPpt-ZCUvyQgM"
       )
       .then(
         (result) => {
@@ -110,8 +112,6 @@ export default function Home() {
   const showMenu = () => {
     setActive(!active);
   };
-
-  console.log(activeLink);
 
   return (
     <>
@@ -138,6 +138,7 @@ export default function Home() {
           <Link href="/" className="header__heading">
             Klaudia Jedrzejewska
           </Link>
+         
         </div>
 
         <nav className="nav">
@@ -191,9 +192,10 @@ export default function Home() {
                   pracy jest terapia behawioralna w oparciu o Stosowaną Analizę
                   Zachowania.
                 </p>
-                <a href="#contact" className="button">
-                  Umów się
-                </a>
+                
+                <LoadingButton className="button"><Link href="#section4">Umów się </Link></LoadingButton>
+                  
+               
               </article>
             </div>
           </div>
@@ -227,9 +229,8 @@ export default function Home() {
               W swojej pracy kieruje się dobrem dziecka, w trakcie pracy stale
               podążam za jego potrzebami.
             </p>
-            <a href="#contact" className="button">
-              Umów się
-            </a>
+            <LoadingButton className="button"><Link href="#section4">Umów się </Link></LoadingButton>
+                  
           </article>
         </section>
         <section className="offer" id="section3">
@@ -314,7 +315,7 @@ export default function Home() {
                 required
               />
               <p className="form__info">* pole wymagane</p>
-              <button className="button">Wyślij</button>
+              <LoadingButton className="button" loading={loading}>Wyślij</LoadingButton>
             </form>
 
             <Image

@@ -1,0 +1,15 @@
+.loadingButton {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    &__icon {
+      background-color: grey;
+      border: 0;
+      color:#fff;
+      margin-top:24px;;
+      &:hover {
+        background-color: #d7b881;
+        color:#fff;
+      }
+    }
+  } 
