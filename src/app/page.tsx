@@ -88,7 +88,7 @@ export default function Home() {
 
     emailjs
       .sendForm(
-        "service_uieaxna",
+        "service_cegqeco",
         "template_c9qk8w7",
         e.target,
         "2GSQoPpt-ZCUvyQgM"
