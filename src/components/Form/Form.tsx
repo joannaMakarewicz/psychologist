@@ -11,29 +11,26 @@ const Form = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [status, setStatus] = useState<boolean>(false);
 
-  console.log(status);
-
   const sendEmail = async (e: any) => {
     e.preventDefault();
     setLoading(true);
 
-    // emailjs
-    //   .sendForm(
-    //     "service_cegqeco",
-    //     "template_c9qk8w7",
-    //     e.target,
-    //     "2GSQoPpt-ZCUvyQgM"
-    //   )
-    //   .then(
-    //     (result) => {
-    //       console.log(result.text);
-    //     },
-    //     (error) => {
-    //       console.log(error.text);
-    //     }
-    //   );
+    emailjs
+      .sendForm(
+        "service_cegqeco",
+        "template_c9qk8w7",
+        e.target,
+        "2GSQoPpt-ZCUvyQgM"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
 
-    console.log("wysłano")
 
     setTimeout(() => {
       setLoading(false);
@@ -43,7 +40,7 @@ const Form = () => {
   };
   return (
     <section className="contactForm" id="section4">
-      <div className="formArea">
+      <div className="contactForm__container">
         <form className="form" onSubmit={sendEmail}>
           <h5 className="contactForm__heading">Napisz do mnie</h5>
           <p className="contactForm__content">Zapraszam do kontaktu</p>
@@ -98,7 +95,7 @@ const Form = () => {
           </LoadingButton>
         </form>
 
-        <Image className="formArea__img" src={baby} alt="przykład ciast" />
+        <Image className="contactForm__img" src={baby} alt="przykład ciast" />
       </div>
     </section>
   );
