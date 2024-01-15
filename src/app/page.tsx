@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from"next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import Form from "@/components/Form/Form";
 import { BsFacebook } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { BsFillTelephoneFill } from "react-icons/bs";
@@ -17,7 +18,8 @@ import offer5 from "../assets/offer5.jpg";
 import offer4 from "../assets/offer4.jpg";
 import logo from "../assets/logoDuze.png";
 import "./page.scss";
-import emailjs from "@emailjs/browser";
+
+import LoadingButton from "@/components/LoadingButton/LoadingButton";
 
 const data = [
   {
@@ -48,8 +50,9 @@ const data = [
 
 export default function Home() {
   const [loading, setLoading] = useState<boolean>(false);
-  const [status, setStatus] = useState<boolean>(false);
+
   const [active, setActive] = useState<boolean>(false);
+
   const [activeLink, setActiveLink]=useState<string>('section1');
   const router = useRouter();
 
@@ -80,38 +83,12 @@ export default function Home() {
     router.push(link)
   }
 
-  const sendEmail = async (e: any) => {
-    e.preventDefault();
-    setLoading(true);
-
-    emailjs
-      .sendForm(
-        "service_8sjpl4f",
-        "template_96glbjq",
-        e.target,
-        "gxhVuR-MaQt-BRs6F"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-
-    setTimeout(() => {
-      setStatus(true);
-      e.target.reset();
-      setLoading(false);
-    }, 200);
-  };
+  
 
   const showMenu = () => {
     setActive(!active);
   };
 
-  console.log(activeLink);
 
   return (
     <>
@@ -138,6 +115,7 @@ export default function Home() {
           <Link href="/" className="header__heading">
             Klaudia Jedrzejewska
           </Link>
+         
         </div>
 
         <nav className="nav">
@@ -191,9 +169,10 @@ export default function Home() {
                   pracy jest terapia behawioralna w oparciu o Stosowaną Analizę
                   Zachowania.
                 </p>
-                <a href="#contact" className="button">
-                  Umów się
-                </a>
+                
+                <LoadingButton className="button"><Link href="#section4">Umów się </Link></LoadingButton>
+                  
+               
               </article>
             </div>
           </div>
@@ -227,9 +206,8 @@ export default function Home() {
               W swojej pracy kieruje się dobrem dziecka, w trakcie pracy stale
               podążam za jego potrzebami.
             </p>
-            <a href="#contact" className="button">
-              Umów się
-            </a>
+            <LoadingButton className="button"><Link href="#section4">Umów się </Link></LoadingButton>
+                  
           </article>
         </section>
         <section className="offer" id="section3">
@@ -262,68 +240,7 @@ export default function Home() {
             </ul>
           </article>
         </section>
-        <section className="contactForm" id="section4">
-          <div className="formArea">
-            <form className="form" onSubmit={sendEmail}>
-              <h5 className="contactForm__heading">Napisz do mnie</h5>
-              <p className="contactForm__content">
-                Zapraszam do kontaktu
-              </p>
-
-              {status ? (
-                <p className="alert">Twoja wiadomość została wysłana</p>
-              ) : null}
-
-              <label htmlFor="name"></label>
-              <input
-                type="text"
-                className="form__control"
-                id="name"
-                name="name"
-                aria-describedby="emailHelp"
-                placeholder="Imię i nazwisko *"
-                required
-              />
-
-              <label htmlFor="email"></label>
-              <input
-                type="email"
-                className="form__control"
-                id="email"
-                name="email"
-                placeholder="Email *"
-                required
-              />
-
-              <label htmlFor="phone"></label>
-              <input
-                type="tel"
-                className="form__control"
-                id="phone"
-                name="phone"
-                placeholder="Telefon *"
-                required
-              />
-
-              <textarea
-                className="form__control"
-                id="message"
-                name="message"
-                placeholder="Twoja wiadomość *"
-                maxLength={200}
-                required
-              />
-              <p className="form__info">* pole wymagane</p>
-              <button className="button">Wyślij</button>
-            </form>
-
-            <Image
-              className="formArea__img"
-              src={baby}
-              alt="przykład ciast"
-            />
-          </div>
-        </section>
+        <Form />
       </main>
 
       <footer className="footer">

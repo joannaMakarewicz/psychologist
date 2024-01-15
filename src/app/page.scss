@@ -424,15 +424,6 @@
   margin: 0;
 }
 
-.alert {
-  background-color: transparent;
-  border: 1px solid $beige;
-  color: $beige;
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  opacity: 0.8;
-  width: 100%;
-}
 .form {
   align-items: center;
   display: flex;
@@ -443,7 +434,7 @@
   margin: 0 auto;
   padding: 10% 0;
   @media screen and (min-width: 1024px) {
-    padding: 8vh 5%;
+    padding: 0 5%;
   }
   &__control {
     border: 0;
@@ -594,6 +585,10 @@
   color: #fff;
   font-size: 18px;
   padding: 16px;
+  cursor: pointer;
+  & a {
+    color:#fff;
+  }
 }
 
 .active {

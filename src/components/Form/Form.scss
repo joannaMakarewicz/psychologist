@@ -1,0 +1,89 @@
+@import "../../helpers/variables";
+
+.alert {
+    background-color: transparent;
+    border: 1px solid $gold;
+    border-radius: 3px;
+    color: $fontColor;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+    padding: 16px;
+    width: 100%;
+  }
+
+  .form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10% 0;
+    @media screen and (min-width: 1024px) {
+      padding: 0 5%;
+    }
+    &__control {
+      border: 0;
+      border-radius: 0;
+      color: $fontColor;
+      font-size: 1rem;
+      outline-color: transparent;
+      margin: 6px;
+      padding: 6px;
+      width: 100%;
+      &--message {
+        height: 8rem;
+      }
+      &--file {
+        font-size: 0.9rem;
+      }
+    }
+    &__heading {
+      margin: 2rem 0;
+    }
+    &__info {
+      font-size: 0.8rem;
+      text-align: left;
+      width: 100%;
+    }
+  }
+
+  .contactForm {
+    text-align: center;
+    overflow: hidden;
+    background-color: $green;
+    color: $white;
+    padding: 0;
+    &__container {
+        background-color: $beige;
+        color: $fontColor;
+        display: grid;
+        margin-top: 100px;
+        @media screen and (min-width: 768px) {
+          margin-top: 60px;
+        }
+        @media screen and (min-width: 1024px) {
+          height: 60vh;
+          grid-template-columns: 1fr 1fr;
+        }
+        }
+    &__heading {
+      font-size: 1.6rem;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    &__img {
+        height: 40vh;
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        @media screen and (min-width: 1024px) {
+          height: 100%;
+          overflow: hidden;
+        }
+  }
+}
+
+
