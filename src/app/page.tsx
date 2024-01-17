@@ -11,6 +11,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { MdAlternateEmail } from "react-icons/md";
 import { AiOutlineMenu } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
+import { LiaCopyrightSolid } from "react-icons/lia"
 import baby from "../assets/baby.jpg";
 import offer1 from "../assets/offer1.jpg";
 import offer2 from "../assets/offer2.jpg";
@@ -309,7 +310,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <div className="footer__author">Joanna Makarewicz</div>
+        <a className="footer__author" href="http://www.joannamakarewicz.pl/" target="_blank" rel="noreferrer"><LiaCopyrightSolid/> 2023 Joanna Makarewicz</a>
       </footer>
     </>
   );
