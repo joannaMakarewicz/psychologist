@@ -258,10 +258,12 @@ export default function Home() {
             <p className="footer__owner">Psycholog</p>
             <ul className="footer__list">
               <li>
-                <a href="/" target="_blank" rel="noreferrer">
+                <a href="https://maps.app.goo.gl/3GaRwbV6p7maYWBL8" target="_blank" rel="noreferrer">
                   <FaLocationDot className="footer__endMargin" />
                 </a>
-                Gdańsk
+                <span>Kielno, </span>
+                <span>ul. Oliwska 44a</span>
+                
               </li>
               <li className="text-nowrap">
                 <a href={`mailto: klaudiajedrzejewska.psycholog@gmail.com?subject=Wiadomość ze strony internetowej`} target="_blank" rel="noreferrer">
