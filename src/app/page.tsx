@@ -264,7 +264,7 @@ export default function Home() {
                 Gdańsk
               </li>
               <li className="text-nowrap">
-                <a href="/" target="_blank" rel="noreferrer">
+                <a href={`mailto: klaudiajedrzejewska.psycholog@gmail.com?subject=Wiadomość ze strony internetowej`} target="_blank" rel="noreferrer">
                   <MdAlternateEmail className="footer__endMargin" />
                   klaudiajedrzejewska.psycholog@gmail.com
                 </a>
