@@ -270,7 +270,7 @@ export default function Home() {
                 </a>
               </li>
               <li>
-                <a href="/" target="_blank" rel="noreferrer">
+                <a href={`tel: 792819494`} target="_blank" rel="noreferrer">
                   <BsFillTelephoneFill className="footer__endMargin" />
                   792 819 494
                 </a>
