@@ -1,23 +1,20 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { useRouter } from"next/navigation";
-import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import Form from "@/components/Form/Form";
-import { BsFacebook } from "react-icons/bs";
-import { BsInstagram } from "react-icons/bs";
-import { BsFillTelephoneFill } from "react-icons/bs";
-import { FaLocationDot } from "react-icons/fa6";
-import { MdAlternateEmail } from "react-icons/md";
-import { AiOutlineMenu } from "react-icons/ai";
-import { RxCross1 } from "react-icons/rx";
-import { LiaCopyrightSolid } from "react-icons/lia"
 import baby from "../assets/baby.jpg";
 import offer1 from "../assets/offer1.jpg";
 import offer2 from "../assets/offer2.jpg";
 import offer5 from "../assets/offer5.jpg";
 import offer4 from "../assets/offer4.jpg";
-import logo from "../assets/logoDuze.png";
+
+import { BsFacebook } from "react-icons/bs";
+import { BsInstagram } from "react-icons/bs";
+import { AiOutlineMenu } from "react-icons/ai";
+import { RxCross1 } from "react-icons/rx";
+import Image from "next/image";
+import Footer from "@/components/Footer/Footer";
+import Link from "next/link";
 import "./page.scss";
 
 import LoadingButton from "@/components/LoadingButton/LoadingButton";
@@ -54,7 +51,7 @@ export default function Home() {
 
   const [active, setActive] = useState<boolean>(false);
 
-  const [activeLink, setActiveLink]=useState<string>('section1');
+  const [activeLink, setActiveLink] = useState<string>("section1");
   const router = useRouter();
 
   useEffect(() => {
@@ -65,50 +62,38 @@ export default function Home() {
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if(
-          scrollPosition>=sectionTop-70 && scrollPosition < sectionTop + sectionHeight - 70
+        if (
+          scrollPosition >= sectionTop - 70 &&
+          scrollPosition < sectionTop + sectionHeight - 70
         ) {
           setActiveLink(section.id);
         }
-      })
-    }
+      });
+    };
     window.addEventListener("scroll", handleScroll);
-    return ()=> {
+    return () => {
       window.removeEventListener("scroll", handleScroll);
-    }
-  }, [])
+    };
+  }, []);
 
-  const handleLinkClick = (link:any) => {
+  const handleLinkClick = (link: any) => {
     setActiveLink(link);
     setActive(false);
-    router.push(link)
-  }
-
-  
+    router.push(link);
+  };
 
   const showMenu = () => {
     setActive(!active);
   };
 
-
   return (
     <>
       <header className="header">
         <div className="header__contact">
-          <a
-            href="/"
-            target="_blank"
-            rel="noreferrer"
-            className="header__icon"
-          >
+          <a href="/" target="_blank" rel="noreferrer" className="header__icon">
             <BsFacebook />
           </a>
-          <a
-            href="/"
-            target="_blank"
-            rel="noreferrer"
-            className="header__icon"
-          >
+          <a href="/" target="_blank" rel="noreferrer" className="header__icon">
             <BsInstagram />
           </a>
         </div>
@@ -116,39 +101,57 @@ export default function Home() {
           <Link href="/" className="header__heading">
             Klaudia Jedrzejewska
           </Link>
-         
         </div>
 
         <nav className="nav">
-          <ul
-            className={active ? "nav__list nav__list--open" : "nav__list"}
-          >
+          <ul className={active ? "nav__list nav__list--open" : "nav__list"}>
             <li className="nav__item">
-              <Link href="#section1" className={activeLink === 'section1' ? "active": ""} onClick={() => handleLinkClick("/section1")}>Strona główna</Link>
+              <Link
+                href="#section1"
+                className={activeLink === "section1" ? "active" : ""}
+                onClick={() => handleLinkClick("/section1")}
+              >
+                Strona główna
+              </Link>
             </li>
             <li className="nav__item">
-              <Link href="#section2" className={activeLink === 'section2' ? "active": ""} onClick={() => handleLinkClick("/section2")}>O mnie</Link>
+              <Link
+                href="#section2"
+                className={activeLink === "section2" ? "active" : ""}
+                onClick={() => handleLinkClick("/section2")}
+              >
+                O mnie
+              </Link>
             </li>
             <li className="nav__item">
-              <Link href="#section3" className={activeLink === 'section3' ? "active": ""} onClick={() => handleLinkClick("/section3")}>Oferta</Link>
+              <Link
+                href="#section3"
+                className={activeLink === "section3" ? "active" : ""}
+                onClick={() => handleLinkClick("/section3")}
+              >
+                Oferta
+              </Link>
             </li>
             <li className="nav__item">
-              <Link href="#section4" className={activeLink === 'section4' ? "active": ""} onClick={() => handleLinkClick("/section4")}>Kontakt</Link>
+              <Link
+                href="#section4"
+                className={activeLink === "section4" ? "active" : ""}
+                onClick={() => handleLinkClick("/section4")}
+              >
+                Kontakt
+              </Link>
             </li>
           </ul>
         </nav>
         <>
-            {active ? (
-              <RxCross1 className="nav__hamburger" onClick={showMenu} />
-            ) : (
-              <AiOutlineMenu
-                className="nav__hamburger"
-                onClick={showMenu}
-              />
-            )}
-          </>
+          {active ? (
+            <RxCross1 className="nav__hamburger" onClick={showMenu} />
+          ) : (
+            <AiOutlineMenu className="nav__hamburger" onClick={showMenu} />
+          )}
+        </>
       </header>
-      <main className="mainContainer" >
+      <main className="mainContainer">
         <section className="main" id="section1">
           <div className="main__image" />
 
@@ -170,10 +173,10 @@ export default function Home() {
                   pracy jest terapia behawioralna w oparciu o Stosowaną Analizę
                   Zachowania.
                 </p>
-                
-                <LoadingButton className="button"><Link href="#section4">Umów się </Link></LoadingButton>
-                  
-               
+
+                <LoadingButton className="button">
+                  <Link href="#section4">Umów się </Link>
+                </LoadingButton>
               </article>
             </div>
           </div>
@@ -207,8 +210,9 @@ export default function Home() {
               W swojej pracy kieruje się dobrem dziecka, w trakcie pracy stale
               podążam za jego potrzebami.
             </p>
-            <LoadingButton className="button"><Link href="#section4">Umów się </Link></LoadingButton>
-                  
+            <LoadingButton className="button">
+              <Link href="#section4">Umów się </Link>
+            </LoadingButton>
           </article>
         </section>
         <section className="offer" id="section3">
@@ -244,76 +248,7 @@ export default function Home() {
         <Form />
       </main>
 
-      <footer className="footer">
-        <section className="footer__article">
-          <Link className="footer__container" href="/">
-            <Image
-              className="footer__logo"
-              src={logo}
-              alt="Klaudia Jedrzejewska"
-            />
-          </Link>
-          <div>
-            <h5 className="footer__heading">Klaudia Jędrzejewska</h5>
-            <p className="footer__owner">Psycholog</p>
-            <ul className="footer__list">
-              <li>
-                <a href="https://maps.app.goo.gl/3GaRwbV6p7maYWBL8" target="_blank" rel="noreferrer">
-                  <FaLocationDot className="footer__endMargin" />
-                </a>
-                <span>Kielno, </span>
-                <span>ul. Oliwska 44a</span>
-                
-              </li>
-              <li className="text-nowrap">
-                <a href={`mailto: klaudiajedrzejewska.psycholog@gmail.com?subject=Wiadomość ze strony internetowej`} target="_blank" rel="noreferrer">
-                  <MdAlternateEmail className="footer__endMargin" />
-                  klaudiajedrzejewska.psycholog@gmail.com
-                </a>
-              </li>
-              <li>
-                <a href={`tel: 792819494`} target="_blank" rel="noreferrer">
-                  <BsFillTelephoneFill className="footer__endMargin" />
-                  792 819 494
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="footer__contact">
-            <h5>Nawigacja</h5>
-            <p
-              className="footer__special footer__specialMargin"
-            >
-              Polityka prywatności
-            </p>
-            <p className="footer__special">Regulamin</p>
-          </div>
-          <div>
-            <h5>Obserwuj</h5>
-            <div>
-              <a
-                href="https://www.facebook.com/profile.php?id=100093528214815"
-                target="_blank"
-                rel="noreferrer"
-                className="footer__icon"
-              >
-                <BsFacebook
-                  className="styles.footer__endMargin footer__specialMargin"
-                />
-              </a>
-              <a
-                href="/"
-                target="_blank"
-                rel="noreferrer"
-                className="footer__icon"
-              >
-                <BsInstagram />
-              </a>
-            </div>
-          </div>
-        </section>
-        <a className="footer__author" href="http://www.joannamakarewicz.pl/" target="_blank" rel="noreferrer"><LiaCopyrightSolid/> 2023 Joanna Makarewicz</a>
-      </footer>
+      <Footer />
     </>
   );
 }
