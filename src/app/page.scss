@@ -170,7 +170,9 @@
     background-color: $white;
     padding: 8vw;
     @media screen and (min-width: 1024px) {
-      background-color: $green;
+      background-color:$green;
+      // background-image: url("../assets/background2.png");
+      // background-size: cover;
     }
   }
   &__text {

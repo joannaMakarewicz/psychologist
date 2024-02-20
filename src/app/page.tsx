@@ -7,7 +7,6 @@ import offer1 from "../assets/offer1.jpg";
 import offer2 from "../assets/offer2.jpg";
 import offer5 from "../assets/offer5.jpg";
 import offer4 from "../assets/offer4.jpg";
-
 import { BsFacebook } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { AiOutlineMenu } from "react-icons/ai";
@@ -15,9 +14,12 @@ import { RxCross1 } from "react-icons/rx";
 import Image from "next/image";
 import Footer from "@/components/Footer/Footer";
 import Link from "next/link";
+import PolicyRegulationsDraft from "@/components/PolicyRegulationsDraft/PolicyRegulationsDraft";
 import "./page.scss";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import LoadingButton from "@/components/LoadingButton/LoadingButton";
+
 
 const data = [
   {
@@ -86,8 +88,23 @@ export default function Home() {
     setActive(!active);
   };
 
+  const [policy, setPolicy] = useState<boolean>(false);
+  const [regulations, setRegulations] = useState<boolean>(false);
+
+  const showPolicy = () => {
+    setPolicy(!policy)
+    console.log(`"policy:" ${!policy}`)
+  };
+
+  const showRegulations = () => {
+    setRegulations(!regulations)
+  };
+
+
+
   return (
     <>
+    {(policy || regulations) ?<PolicyRegulationsDraft showPolicy={showPolicy} policy={policy} regulations={regulations} showRegulations={showRegulations}/> : null}
       <header className="header">
         <div className="header__contact">
           <a href="/" target="_blank" rel="noreferrer" className="header__icon">
@@ -161,6 +178,7 @@ export default function Home() {
                 <h2 className="main__heading">
                   INDYWIDUALNE PODEJŚCIE DO POTRZEB KAŻDEGO DZIECKA
                 </h2>
+
                 <p className="main__content">
                   Prowadzę terapię psychologiczną dla dzieci i młodzieży.
                   Terapia poprzedzona jest wnikliwym badaniem potrzeb ale i
@@ -245,10 +263,10 @@ export default function Home() {
             </ul>
           </article>
         </section>
-        <Form />
+        <Form onClick={showPolicy}/>
       </main>
 
-      <Footer />
+      <Footer showPolicy={showPolicy} showRegulations={showRegulations}/>
     </>
   );
 }

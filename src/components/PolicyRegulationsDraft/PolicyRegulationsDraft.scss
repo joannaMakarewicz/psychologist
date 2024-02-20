@@ -17,7 +17,7 @@
   overflow-y: scroll;
   min-width: 100%;
   min-height: 100%;
-  z-index: 12;
+  z-index: 7;
   background: rgba(179, 179, 179, 0.8);
   color: white;
   &__content {
@@ -33,7 +33,6 @@
   }
   &__heading {
     text-transform: uppercase;
-    text-align:center;
   }
 }
 
@@ -54,10 +53,9 @@
     background-color: $beige;
     border-radius: 6px;}
   &__icon {
-    background-color: $gold;
+    background-color: red;
     border: 0;
     color: #fff;
-    margin: 24px auto 0;
     margin-top: 24px;
     @media screen and (min-width: 1024px) {
       margin-top: 44px;
