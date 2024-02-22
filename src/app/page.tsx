@@ -20,7 +20,6 @@ import "./page.scss";
 
 import LoadingButton from "@/components/LoadingButton/LoadingButton";
 
-
 const data = [
   {
     heading: "Konsultacje psychologiczne",
@@ -92,19 +91,24 @@ export default function Home() {
   const [regulations, setRegulations] = useState<boolean>(false);
 
   const showPolicy = () => {
-    setPolicy(!policy)
-    console.log(`"policy:" ${!policy}`)
+    setPolicy(!policy);
+    console.log(`"policy:" ${!policy}`);
   };
 
   const showRegulations = () => {
-    setRegulations(!regulations)
+    setRegulations(!regulations);
   };
-
-
 
   return (
     <>
-    {(policy || regulations) ?<PolicyRegulationsDraft showPolicy={showPolicy} policy={policy} regulations={regulations} showRegulations={showRegulations}/> : null}
+      {policy || regulations ? (
+        <PolicyRegulationsDraft
+          showPolicy={showPolicy}
+          policy={policy}
+          regulations={regulations}
+          showRegulations={showRegulations}
+        />
+      ) : null}
       <header className="header">
         <div className="header__contact">
           <a href="/" target="_blank" rel="noreferrer" className="header__icon">
@@ -266,7 +270,10 @@ export default function Home() {
         <Form />
       </main>
 
-      <Footer showPolicy={() => showPolicy()} showRegulations={()=> showRegulations()}/>
+      <Footer
+        showPolicy={showPolicy}
+        showRegulations={showRegulations}
+      />
     </>
   );
 }

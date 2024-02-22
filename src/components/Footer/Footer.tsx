@@ -11,8 +11,8 @@ import Link from "next/link";
 import "../Footer/Footer.scss";
 
 type FooterProps = {
-  showRegulations?: () => void;
-  showPolicy?: () => void;
+  showRegulations: () => void;
+  showPolicy: () => void;
 };
 
 const Footer = ({ showRegulations, showPolicy }: FooterProps) => {

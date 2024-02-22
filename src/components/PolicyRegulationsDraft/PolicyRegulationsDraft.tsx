@@ -6,10 +6,10 @@ import LoadingButton from "@/components/LoadingButton/LoadingButton";
 import Button from "@/components/Button/Button";
 
 type PolicyRegulationsDraftProps = {
-  policy?: boolean;
+  policy: boolean;
   regulations?: boolean;
-  showPolicy?: () => void;
-  showRegulations?: () => void;
+  showPolicy: () => void;
+  showRegulations: () => void;
 };
 
 const PolicyRegulationsDraft = ({
@@ -30,9 +30,11 @@ const PolicyRegulationsDraft = ({
           {policy ? <Policy /> : <Regulations />}
         </div>
 
-
-            <Button title="Zamknij" className="button__icon" onClick={() => policy ? showPolicy() : showRegulations()}/>
-
+        <Button
+          title="Zamknij"
+          className="button__icon"
+          clickHandler={() => (policy ? showPolicy() : showRegulations())}
+        />
       </div>
     </div>
   );

@@ -3,13 +3,13 @@ import React from "react";
 type ButtonProps = {
   className: string;
   title: string;
-  onClick?: () => void;
+  clickHandler: () => void;
 };
 
-const Button = ({ className, title, onClick }: ButtonProps) => {
+const Button = ({ className, title, clickHandler }: ButtonProps) => {
   return (
     <div >
-      <button className={className} onClick={onClick}>
+      <button className={className} onClick={() => clickHandler()}>
         {title}
       </button>
     </div>
