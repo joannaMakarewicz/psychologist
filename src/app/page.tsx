@@ -263,7 +263,7 @@ export default function Home() {
             </ul>
           </article>
         </section>
-        <Form onClick={showPolicy}/>
+        <Form />
       </main>
 
       <Footer showPolicy={showPolicy} showRegulations={showRegulations}/>
