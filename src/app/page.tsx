@@ -266,7 +266,7 @@ export default function Home() {
         <Form />
       </main>
 
-      <Footer showPolicy={showPolicy} showRegulations={showRegulations}/>
+      <Footer showPolicy={() => showPolicy()} showRegulations={()=> showRegulations()}/>
     </>
   );
 }
